@@ -6,6 +6,8 @@ Implementasi awal menggunakan konten lokal dari `src/data/portfolio.js`. Link Gi
 
 Konten kini dirender ke HTML pada development/build; browser memuat HTML, CSS, dan favicon tanpa JavaScript aplikasi. Metadata dibuat dari data lokal yang sama. Ini tetap website statis tanpa API, SSR server produksi, atau database.
 
+LinkedIn dipakai sebagai sumber editorial pada sesi pengembangan dan sebagai tautan kontak publik. Website tidak melakukan fetch profil LinkedIn, menggunakan API key, atau menyinkronkan data otomatis.
+
 ## 1. Keputusan saat ini
 
 Data website hardcoded. Project tidak membutuhkan pengambilan data dari API eksternal. Arsitektur statis tanpa endpoint aplikasi merupakan usulan awal di `ARCHITECTURE.md`.

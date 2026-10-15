@@ -13,7 +13,7 @@ function render(overrides = {}) {
 }
 
 test('missing optional content hides sections, navigation, and the hero CTA together', () => {
-  const document = render({ projects: [], contacts: [], profile: { ...portfolio.profile, bio: null } });
+  const document = render({ projects: [], contacts: [], about: null, profile: { ...portfolio.profile, bio: null } });
   ['#karya', '#terhubung', '#tentang', '[data-project-link]', '[data-contact-link]', '[data-about-link]'].forEach((selector) => {
     document.querySelectorAll(selector).forEach((element) => assert.equal(element.hidden, true, selector));
   });

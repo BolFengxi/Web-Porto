@@ -1,6 +1,6 @@
 # TASKS — Web Portofolio
 
-Status: redesign notebook, bio pemilik, dan tiga proyek terverifikasi tersedia; 10 tes/build berhasil; QA browser belum dilakukan.
+Status: redesign notebook, bio pemilik, dan tiga proyek terverifikasi tersedia; 14 tes/build berhasil; QA browser belum dilakukan.
 
 Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetujuan final.
 
@@ -16,6 +16,7 @@ Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetuj
 - [x] DESIGN-02 — Mendokumentasikan pola visual, token usulan, komposisi, dan responsivitas di `DESIGN.md`.
 - [x] DESIGN-04 — Menerima referensi notebook baru, mengganti DESIGN.md, dan menyimpan referensi komik sebagai riwayat.
 - [x] CONTENT-02 — Memakai bio persis dari pemilik serta memilih tiga proyek berdasarkan repo/source public; bukti dicatat di `references/project-selection.md`.
+- [x] CONTENT-03 — Menambahkan About, pendidikan, pengalaman terverifikasi dari cuplikan LinkedIn, dan tautan LinkedIn; batas sumber dicatat.
 - [ ] DESIGN-03 — Memfinalkan adaptasi portofolio, font, warna, dan aset berdasarkan referensi serta konten pemilik.
 
 ## Fase 1 — Setup
@@ -50,18 +51,19 @@ UI-04 masih menunggu kontak tambahan/CV; tautan GitHub terverifikasi sudah terse
 - [ ] QA-03 — Memeriksa seluruh link, navigasi, menu mobile jika ada, dan CTA.
 - [ ] QA-04 — Memeriksa keyboard, focus, heading, alt text, dan kontras.
 - [ ] QA-05 — Memastikan tidak ada placeholder publik, fakta rekaan, aset hilang, atau secret.
-- [x] QA-06 — `npm run check` berhasil: pemeriksaan sintaks, 10 tes DOM/metadata/URL, build Vite, dan pemeriksaan HTML/aset produksi.
+- [x] QA-06 — `npm run check` berhasil: pemeriksaan sintaks, 14 tes DOM/metadata/URL/latar belakang, build Vite, dan pemeriksaan HTML/aset produksi.
 
 Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman; tes ini tidak menggantikan QA visual/browser. QA browser dilewati karena kontrol browser yang didukung tidak tersedia pada lingkungan ini.
 
 ## Fase 4 — Rilis
 
 - [x] REPO-03 — Branch `feat/comic-portfolio` sudah di-push pemilik dan diverifikasi di remote.
-- [ ] REPO-04 — Membuat PR; API integrasi menolak akses pembuatan PR (403).
-- [ ] REPO-05 — Menerapkan patch HTML statis bila belum dipasang, lalu patch redesign notebook, dan push. Paket handoff memeriksa baseline agar patch statis tidak diterapkan dua kali.
+- [x] REPO-04 — PR #1 telah digabung pemilik ke `main`, diverifikasi pada commit `a004d99`.
+- [x] REPO-05 — HTML statis dan notebook telah masuk `main`.
+- [ ] REPO-07 — Menerapkan patch konten LinkedIn ke main dan memeriksa deployment ulang Vercel.
 
 - [ ] RELEASE-01 — Menyiapkan hasil yang dapat ditinjau pemilik dan menindaklanjuti revisi.
-- [ ] RELEASE-02 — Melakukan deployment setelah target dan instruksi rilis jelas.
+- [x] RELEASE-02 — Pemilik menyatakan deployment Vercel sudah berhasil; URL/hasil live masih perlu diperiksa pada RELEASE-03.
 - [ ] RELEASE-03 — Memeriksa versi yang terdeploy dan mencatat URL serta hasil verifikasi.
 - [ ] RELEASE-04 — Memperbarui README, changelog, dan status tugas berdasarkan hasil nyata.
 

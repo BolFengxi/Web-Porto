@@ -12,7 +12,9 @@ Metadata title, description, dan Open Graph mengikuti profil dengan override ops
 
 Build menghasilkan `dist/` untuk static hosting. Tidak ada konfigurasi hosting/deployment saat ini; pengembangan tetap melalui repository GitHub dan checkout lokal. Folder referensi tidak dimasukkan ke build produksi.
 
-Arah tampilan aktif: notebook/grid/pixel sesuai `DESIGN.md`. Bio kini diberikan pemilik; renderer menampilkannya sekali dalam hero dan About mengarah ke bagian tersebut. `public/fonts/` berisi font piksel lokal beserta lisensi. Tidak ada library UI atau JavaScript browser tambahan untuk redesign.
+Arah tampilan aktif: notebook/grid/pixel sesuai `DESIGN.md`. Bio kini diberikan pemilik; renderer menampilkannya sekali dalam hero. About mengarah ke profil tambahan bila tersedia dan kembali ke hero bila data tambahan kosong. `public/fonts/` berisi font piksel lokal beserta lisensi. Tidak ada library UI atau JavaScript browser tambahan untuk redesign.
+
+Renderer juga merender `about.education` dan `about.experience` dari data lokal. Section serta anchor About diselaraskan berdasarkan isi. Tidak ada pengambilan data LinkedIn dari browser atau server produksi.
 
 ## 1. Dasar keputusan
 

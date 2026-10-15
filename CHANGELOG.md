@@ -4,6 +4,16 @@ Catatan perubahan berarti pada project. Entri mencatat pekerjaan yang sudah dila
 
 ## [Unreleased]
 
+### Content — 15 Oktober 2026
+
+- Source disamakan dengan produksi `main` setelah merge PR #1 (`a004d99`). Pemilik menyatakan deployment Vercel telah selesai.
+- About ditambahkan sebagai catatan notebook dengan nama lengkap, ringkasan, Education, dan Experience. Bio hero tetap persis sesuai instruksi pemilik.
+- Pengalaman mengacu pada cuplikan publik LinkedIn: Teaching Assistant di Fasilkom UI, kelas Introduction to Computer Organization, serta pengalaman bendahara organisasi mahasiswa. Informasi yang tidak terbaca tidak diisi; batas sumber ada di `references/linkedin-content.md`.
+- Tautan LinkedIn ditambahkan di samping GitHub. Tidak ada API/sinkronisasi LinkedIn pada website.
+- Empat tes tambahan memeriksa konten statis, pengosongan section/anchor, data opsional, dan teks aman. `npm run check` berhasil: 14 tes, build, serta pemeriksaan HTML/anchor/aset.
+- Hasil disiapkan sebagai patch untuk `main`; perubahan ini belum di-push atau dideploy ulang dari sesi cloud. QA browser/Windows belum dilakukan.
+
+
 ### Redesigned — 15 Oktober 2026
 
 - Referensi notebook baru menggantikan arah komik. DESIGN.md ditulis ulang; gambar baru disimpan di `references/hero-notebook-reference.png`, gambar lama dipertahankan sebagai riwayat.

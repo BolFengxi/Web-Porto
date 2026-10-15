@@ -42,6 +42,8 @@ export function renderPortfolio(document, data) {
   resumeLink.removeAttribute('href');
   if (resume) resumeLink.setAttribute('href', resume);
 
+  renderBackground(document, data);
+
   const projectList = document.querySelector('#project-list');
   projectList.replaceChildren();
   const seen = new Set();
@@ -87,4 +89,68 @@ export function renderPortfolio(document, data) {
   validContacts.forEach((contact) => {
     contactList.append(externalLink(document, contact.label, safeHref(contact.href), 'button button-paper'));
   });
+}
+
+function renderBackground(document, data) {
+  const about = data.about ?? {};
+  const summary = typeof about.summary === 'string' ? about.summary.trim() : '';
+  document.querySelector('[data-full-name]').textContent = data.profile.fullName ?? data.profile.displayName;
+  document.querySelector('[data-about-summary]').textContent = summary;
+  setVisible(document, '[data-about-note]', Boolean(summary));
+
+  const educationList = document.querySelector('#education-list');
+  educationList.replaceChildren();
+  (about.education ?? []).filter((item) => item.institution?.trim() && item.program?.trim()).forEach((item) => {
+    const entry = backgroundEntry(document, item.institution, item.program, item.qualification);
+    educationList.append(entry);
+  });
+  setVisible(document, '[data-education-group]', educationList.children.length > 0);
+
+  const experienceList = document.querySelector('#experience-list');
+  experienceList.replaceChildren();
+  (about.experience ?? []).filter((item) => item.title?.trim()).forEach((item) => {
+    const entry = backgroundEntry(document, item.title, item.organization, item.period);
+    if (item.details?.length) {
+      const details = document.createElement('ul');
+      details.className = 'background-details';
+      item.details.filter((detail) => typeof detail === 'string' && detail.trim()).forEach((detail) => {
+        const line = document.createElement('li');
+        line.textContent = detail;
+        details.append(line);
+      });
+      if (details.children.length) entry.append(details);
+    }
+    experienceList.append(entry);
+  });
+  setVisible(document, '[data-experience-group]', experienceList.children.length > 0);
+  setVisible(document, '[data-background-notes]', educationList.children.length > 0 || experienceList.children.length > 0);
+
+  const hasBackground = Boolean(summary || educationList.children.length || experienceList.children.length);
+  setVisible(document, '#profil', hasBackground);
+  const hasHeroAbout = !document.querySelector('#tentang').hidden;
+  setVisible(document, '[data-about-link]', hasBackground || hasHeroAbout);
+  document.querySelectorAll('[data-about-link]').forEach((link) => {
+    link.setAttribute('href', hasBackground ? '#profil' : '#tentang');
+  });
+}
+
+function backgroundEntry(document, title, subtitle, note) {
+  const entry = document.createElement('article');
+  entry.className = 'background-entry';
+  const heading = document.createElement('h4');
+  heading.textContent = title;
+  entry.append(heading);
+  if (subtitle?.trim()) {
+    const line = document.createElement('p');
+    line.className = 'background-subtitle';
+    line.textContent = subtitle;
+    entry.append(line);
+  }
+  if (note?.trim()) {
+    const line = document.createElement('p');
+    line.className = 'background-period';
+    line.textContent = note;
+    entry.append(line);
+  }
+  return entry;
 }

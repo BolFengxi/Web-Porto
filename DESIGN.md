@@ -28,7 +28,7 @@ Robin, Product Designer, Chicago, status tersedia untuk kerja, foto, akun sosial
 - Satu lembar notebook di atas latar grid, dengan navigasi Home / About / Projects dan Contact.
 - Nama `Iqbal` menjadi fokus utama memakai font piksel lokal; outline oranye tipis menggantikan ledakan dan outline tebal desain lama.
 - Bio ditampilkan persis: **Undergraduate Computer Science student at University of Indonesia**.
-- About mengarah ke bio di dalam hero agar kalimat yang sama tidak diulang dalam section kosong. Bagian foto/tentang yang lebih panjang menunggu aset dan informasi dari pemilik.
+- About kini mengarah ke section `#profil`: ringkasan singkat dalam catatan kertas dan daftar Education/Experience. Bio hero tetap persis dan tidak diulang. Jika data tambahan dihapus, navigasi kembali ke bio hero. Foto pribadi tetap menunggu aset pemilik.
 - CTA Explore my work mengarah ke karya; Contact menuju bagian tautan GitHub yang benar-benar tersedia.
 - Tiga proyek awal: Sporta Kuler, MinaToko, Neo Tube Automator. Alasan dan sumbernya ada di [project-selection.md](references/project-selection.md).
 - Panel proyek memakai tab folder dekoratif dan lembar monogram berselotip. Monogram adalah dekorasi tipografis, bukan screenshot aplikasi. Tidak ada kontrol tab palsu.
@@ -68,6 +68,8 @@ Nilai di atas dipakai di `src/styles.css`; bukan klaim hasil sampling tepat dari
 Desktop menampilkan hero terpusat, lalu panel proyek dua kolom: deskripsi di kiri dan lembar monogram di kanan. Di bawah 850 px jarak dipadatkan; di bawah 650 px panel proyek menjadi satu kolom. Navigasi dapat membungkus pada lebar sangat kecil. Chip/dekorasi diringkas agar tidak menutupi bio.
 
 Tidak ada intro wajib klik, filter, carousel, atau animasi dekoratif berulang. Tautan anchor bekerja tanpa JavaScript browser. Hover CTA hanya bergerak singkat; reduced motion menonaktifkannya. Focus outline oranye dan skip link disediakan. Area interaksi umumnya minimal 44 px; target navigasi desktop yang lebih ringkas perlu diverifikasi saat QA.
+
+Section profil memakai dua kolom pada desktop (catatan ringkasan dan latar belakang), lalu satu kolom di bawah 650 px. Tidak ada foto, garis waktu, metrik, atau logo organisasi rekaan.
 
 ## 7. Verifikasi
 

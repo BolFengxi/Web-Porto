@@ -3,6 +3,7 @@
 export const portfolio = {
   profile: {
     displayName: 'Iqbal',
+    fullName: 'Iqbal Rafi Nuryana',
     bio: 'Undergraduate Computer Science student at University of Indonesia',
     resume: null,
   },
@@ -11,6 +12,26 @@ export const portfolio = {
     title: null,
     description: null,
     siteUrl: null,
+  },
+  about: {
+    summary: 'My projects span web applications, Flutter apps, and Python automation. Alongside building software, I have experience in teaching assistance and student organization treasury.',
+    education: [
+      { institution: 'Universitas Indonesia', program: 'Computer Science', qualification: 'Undergraduate' },
+    ],
+    experience: [
+      {
+        title: 'Teaching Assistant',
+        organization: 'Faculty of Computer Science, Universitas Indonesia',
+        period: 'Jul 2026 — Present',
+        details: ['Introduction to Computer Organization'],
+      },
+      {
+        title: 'Student Organization Treasurer',
+        organization: null,
+        period: null,
+        details: [],
+      },
+    ],
   },
   projects: [
     {
@@ -45,6 +66,7 @@ export const portfolio = {
     },
   ],
   contacts: [
+    { id: 'linkedin', label: 'Connect on LinkedIn', href: 'https://www.linkedin.com/in/iqbal-rafi-nuryana-201836315/' },
     { id: 'github', label: 'Find me on GitHub', href: 'https://github.com/BolFengxi' },
   ],
 };

@@ -23,9 +23,9 @@ Buka URL lokal yang dicetak Vite (biasanya `http://127.0.0.1:5173`). Hentikan de
 
 ## Mengubah konten
 
-Edit `src/data/portfolio.js` untuk nama, bio, CV, project, teknologi, dan kontak. `null` atau array kosong menyembunyikan konten opsional beserta navigasinya. Tidak ada tombol demo/CV ketika tujuannya belum tersedia. Teks dimasukkan sebagai teks biasa, bukan HTML.
+Edit `src/data/portfolio.js` untuk nama, bio, About, pendidikan, pengalaman, CV, project, teknologi, dan kontak. `null` atau array kosong menyembunyikan konten opsional beserta navigasinya. Tidak ada tombol demo/CV ketika tujuannya belum tersedia. Teks dimasukkan sebagai teks biasa, bukan HTML.
 
-Bio memakai teks persis dari pemilik: “Undergraduate Computer Science student at University of Indonesia”. Kartu proyek dipilih dari repository public yang diverifikasi: Sporta Kuler, MinaToko, dan Neo Tube Automator. Bukti serta alasan pilihan ada di [project-selection.md](references/project-selection.md). CV, foto pribadi, screenshot proyek, demo live, dan kontak selain GitHub belum tersedia. Bahasa UI awal Inggris mengikuti bio serta referensi baru.
+Bio memakai teks persis dari pemilik: “Undergraduate Computer Science student at University of Indonesia”. Kartu proyek dipilih dari repository public yang diverifikasi: Sporta Kuler, MinaToko, dan Neo Tube Automator. Bukti serta alasan pilihan ada di [project-selection.md](references/project-selection.md). Bagian About memuat nama lengkap, ringkasan, pendidikan, dan pengalaman yang terbaca dari LinkedIn. Kontak LinkedIn ditambahkan di samping GitHub. Bukti serta batas sumber ada di [linkedin-content.md](references/linkedin-content.md). CV, foto pribadi, screenshot proyek, dan demo live belum tersedia. Bahasa UI awal Inggris mengikuti bio serta referensi baru.
 
 Untuk menambahkan CV lokal, letakkan file di `public/` lalu isi `profile.resume`, misalnya `/cv.pdf`. Jangan mengisi path sebelum berkasnya tersedia. Judul, deskripsi, dan Open Graph mengikuti data profil. Gunakan `metadata.title`/`metadata.description` untuk override; biarkan `metadata.siteUrl` bernilai `null` sampai domain yang sebenarnya tersedia. Canonical tidak dibuat sebelum URL HTTPS valid diberikan.
 
@@ -48,11 +48,11 @@ Konten karya dan kontak sudah ada di HTML hasil build; tetap dapat digunakan saa
 
 ## Status dan verifikasi
 
-Pemilik telah menerapkan patch pertama dan push branch `feat/comic-portfolio` ke GitHub. Perbaikan HTML statis dan redesign notebook disiapkan setelah commit remote tersebut. Akses tulis/PR integrasi masih ditolak (403), sehingga perubahan lanjutan disediakan sebagai patch terpisah; PR belum dibuat.
+PR #1 sudah digabung pemilik ke `main`, diverifikasi pada commit `a004d99`. Perubahan konten LinkedIn disiapkan dari commit tersebut pada branch kerja `feat/linkedin-content`. Akses tulis integrasi sebelumnya ditolak (403), sehingga hasil diserahkan sebagai patch; perubahan ini belum di-push dari sesi cloud.
 
-`npm run check` berhasil: pemeriksaan sintaks, 10 tes, build produksi, serta pemeriksaan HTML, anchor, dan aset lokal. Build hanya menghasilkan HTML/CSS/favicon tanpa JavaScript browser. Tes DOM tidak memverifikasi layout, kontras, atau interaksi browser. Pemeriksaan visual di 360, 768, dan 1440 px, keyboard, zoom 200%, serta reduced motion masih perlu dilakukan di browser. Belum ada pengujian langsung pada Windows.
+`npm run check` berhasil: pemeriksaan sintaks, 14 tes, build produksi, serta pemeriksaan HTML, anchor, dan aset lokal. Build hanya menghasilkan HTML/CSS/favicon tanpa JavaScript browser. Tes DOM tidak memverifikasi layout, kontras, atau interaksi browser. Pemeriksaan visual di 360, 768, dan 1440 px, keyboard, zoom 200%, serta reduced motion masih perlu dilakukan di browser. Belum ada pengujian langsung pada Windows.
 
-Belum ada deployment. Target hosting/domain, konten publik final, dan persetujuan desain tetap terbuka. Folder di laptop tidak berubah otomatis ketika branch cloud diperbarui.
+Pemilik menyatakan deployment Vercel sudah selesai. Update berikutnya ditujukan ke branch produksi `main`; setelah patch diterapkan dan di-push, koneksi Git Vercel dapat membangun ulang versi live. URL produksi dan hasil deployment ulang belum diverifikasi pada sesi ini. Folder laptop tidak berubah otomatis ketika source cloud diperbarui.
 
 ## Dokumentasi
 
