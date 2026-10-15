@@ -42,7 +42,7 @@ test('canonical and share URLs appear only when a valid HTTPS site URL is suppli
 });
 
 test('empty content stays hidden in the delivered HTML and leaves no dead navigation', () => {
-  const document = page({ ...portfolio, projects: [], contacts: [], profile: { ...portfolio.profile, bio: null } });
+  const document = page({ ...portfolio, projects: [], contacts: [], about: null, profile: { ...portfolio.profile, bio: null } });
   for (const selector of ['#karya', '#terhubung', '#tentang', '[data-project-link]', '[data-contact-link]']) {
     document.querySelectorAll(selector).forEach((element) => assert.equal(element.hidden, true));
   }
