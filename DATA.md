@@ -1,6 +1,16 @@
 # DATA — Konten Hardcoded
 
-Status: rancangan kontrak konten · Diperbarui: 15 Oktober 2026
+Status: kontrak awal diimplementasikan · Diperbarui: 15 Oktober 2026
+
+## Sumber aktual
+
+Konten ada di `src/data/portfolio.js`: `profile`, `projects`, dan `contacts`. Field profil aktual: `displayName`, `bio`, `resume`. Project menggunakan `id`, `title`, `monogram`, `category`, `summary`, `technologies`, `repositoryUrl`, `demoUrl`. Kontak menggunakan `id`, `label`, `href`. Field lain dalam rancangan di bawah belum diimplementasikan.
+
+Bio publik diberikan pemilik dan dipertahankan persis: `Undergraduate Computer Science student at University of Indonesia`. CV tetap `null`. Tidak ada field `intro` terpisah agar bio tidak diulang. Kartu utama berisi Sporta Kuler, MinaToko, dan Neo Tube Automator. Alasan serta bukti source ada di `references/project-selection.md`. Teknologi kartu adalah teknologi project, bukan tingkat skill personal. `monogram` hanya dekorasi huruf.
+
+`src/ui.js` merender teks melalui `textContent`, menghilangkan ID project duplikat/konten wajib kosong, dan mengizinkan URL HTTPS atau mailto yang valid. Path absolut lokal hanya diizinkan untuk CV. Link kosong atau berbahaya tidak ditampilkan. Section dan navigasi terkait disembunyikan bersama jika tidak ada konten. Renderer dijalankan saat development/build oleh `scripts/render-page.js`, sehingga hasil HTML tetap lengkap tanpa JavaScript browser.
+
+`metadata.title` dan `metadata.description` opsional; nilai `null` menggunakan nama serta bio profil. `metadata.siteUrl` tetap `null` sampai domain diberikan; canonical dan `og:url` hanya dibuat untuk URL HTTPS valid. Open Graph title/description mengikuti metadata yang sama. Jangan mengisi domain contoh pada data publik. Build memeriksa file lokal yang dirujuk HTML, termasuk CV bila sudah ditambahkan.
 
 ## 1. Mengapa dokumen ini ada
 
@@ -9,8 +19,8 @@ Tidak diperlukan database untuk kebutuhan saat ini. Dokumen ini menjaga nama fie
 ## 2. Sumber dan kepemilikan
 
 - Pemilik project menyediakan fakta, narasi, aset, dan tautan yang boleh dipublikasikan.
-- Data disimpan dalam file lokal yang sesuai stack; lokasi usulan: `src/data/portfolio.*`.
-- Belum ada file data aplikasi atau konten portofolio lengkap yang dibuat.
+- Data disimpan dalam `src/data/portfolio.js`.
+- Konten awal tersedia; konten portofolio lengkap masih menunggu pemilik.
 - Perubahan konten dilakukan melalui source, lalu build/deploy ulang sesuai arsitektur terpilih.
 - Seluruh field berikut merupakan usulan dan dapat disederhanakan setelah konten diterima.
 

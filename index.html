@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f7f3" />
+    <meta name="description" content="Iqbal. Undergraduate Computer Science student at University of Indonesia" />
+    <title>Iqbal — Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/pixelify-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-sheet">
+      <header class="site-header">
+        <a class="wordmark" href="#beranda" aria-label="Iqbal, home"><span aria-hidden="true">i.</span></a>
+        <nav aria-label="Main navigation">
+          <a class="nav-link nav-home" href="#beranda"><span aria-hidden="true">✦</span> Home</a>
+          <a class="nav-link" href="#tentang" data-about-link hidden><span aria-hidden="true">♟</span> About</a>
+          <a class="nav-link" href="#karya" data-project-link><span aria-hidden="true">▦</span> Projects</a>
+        </nav>
+        <a class="nav-contact" href="#terhubung" data-contact-link><span aria-hidden="true">♥</span> Contact</a>
+      </header>
+
+      <main id="main" tabindex="-1">
+        <section id="beranda" class="hero" aria-labelledby="hero-title">
+          <div class="hero-labels" aria-hidden="true"><span class="pill pill-green">COMPUTER SCIENCE</span><span class="pill pill-yellow">BUILDING & LEARNING</span></div>
+          <p class="handwritten hero-hello">my name is</p>
+          <div class="name-frame"><h1 id="hero-title" data-name>Iqbal</h1></div>
+          <div class="name-caption" aria-hidden="true"><span class="note note-yellow">a work in progress</span><span class="caption-line"></span><span class="note note-green">hello, world :)</span></div>
+
+          <div id="tentang" class="hero-introduction" hidden>
+            <p class="hero-description" data-bio></p>
+            <a class="text-link resume-link" data-resume hidden>Download CV <span aria-hidden="true">↓</span></a>
+          </div>
+          <a class="button button-dark" href="#karya" data-project-link><span class="button-icon" aria-hidden="true">↗</span> Explore my work</a>
+
+          <span class="doodle doodle-star" aria-hidden="true">✳</span>
+          <span class="doodle doodle-flower" aria-hidden="true">✿</span>
+          <span class="handwritten margin-note" aria-hidden="true">a little corner<br />of the internet ↗</span>
+          <svg class="hero-divider" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 33 Q490 -15 1000 26" /></svg>
+        </section>
+
+        <section id="karya" class="work-section section-wrapper" aria-labelledby="work-title" hidden>
+          <div class="section-heading">
+            <div><p class="section-kicker handwritten">a few things I've made</p><h2 id="work-title">Selected work<span class="heading-star" aria-hidden="true">✦</span></h2></div>
+            <p class="section-description">From web and mobile<br />to small automations.</p>
+          </div>
+          <div class="project-list" id="project-list"></div>
+        </section>
+
+        <section id="terhubung" class="contact-section section-wrapper" aria-labelledby="contact-title" hidden>
+          <span class="note note-yellow contact-note handwritten" aria-hidden="true">let's connect ↘</span>
+          <p class="section-kicker">THE NEXT PAGE</p>
+          <h2 id="contact-title">See you around<span aria-hidden="true"> ✳</span></h2>
+          <div class="contact-list" id="contact-list"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer section-wrapper"><p>© <span data-year>2026</span> <span data-name>Iqbal</span></p><span class="footer-note handwritten">still learning, still making.</span><a href="#beranda">Back to top ↑</a></footer>
+    </div>
+
+    <template id="project-template">
+      <article class="project-card">
+        <p class="project-tab"><span aria-hidden="true">✦</span> PROJECT <span class="project-number"></span></p>
+        <div class="project-inner">
+          <div class="project-content">
+            <p class="project-category"></p>
+            <h3 class="project-title"></h3>
+            <p class="project-summary"></p>
+            <ul class="technology-list" aria-label="Project technologies"></ul>
+            <div class="project-actions"></div>
+          </div>
+          <div class="project-visual" aria-hidden="true"><div class="specimen-paper"><span class="tape tape-left"></span><span class="tape tape-right"></span><span class="specimen-label">FROM THE WORKBOOK</span><strong data-project-monogram></strong><span class="specimen-stack" data-project-stack></span><span class="specimen-foot">EXPERIMENT. BUILD. LEARN.</span></div></div>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

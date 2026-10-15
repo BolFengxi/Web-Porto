@@ -1,58 +1,59 @@
-# Web Portofolio
+# Web Porto
 
-Dokumentasi awal untuk website portofolio pribadi Iqbal. Tahap saat ini adalah persiapan kebutuhan dan desain; kode aplikasi belum dibuat.
+Portofolio Iqbal dengan arah visual notebook: kertas bergaris, latar grid, nama piksel, dan panel proyek seperti folder. Implementasi awal memakai HTML, CSS, JavaScript modules, dan Vite. Data hardcoded dirender menjadi HTML saat development/build; tidak ada JavaScript aplikasi di browser, backend, database, API eksternal, atau environment variable aplikasi.
 
-## Keputusan saat ini
+## Menjalankan di laptop
 
-- Data website hardcoded.
-- Tidak ada kebutuhan mengambil data dari API eksternal.
-- Referensi hero section sudah diterima dan dianalisis di `DESIGN.md`: panel komik, halftone, dan warna neon.
-- Stack, hosting, bahasa website, section final, dan konten publik belum ditentukan.
+Gunakan Node.js 22.12+ pada seri 22, atau Node.js 24+. Jalankan dari folder `Documents\Project\Web-Porto`:
 
-Website statis satu halaman tanpa backend/database merupakan **usulan awal**, bukan stack atau scope final yang sudah disetujui.
+```powershell
+npm ci
+npm run dev
+```
 
-## Peta dokumen
+Buka URL lokal yang dicetak Vite (biasanya `http://127.0.0.1:5173`). Hentikan dengan `Ctrl+C`. Setelah mengambil branch implementasi dari GitHub, jalankan `npm ci` agar dependency sesuai `package-lock.json`.
 
-| Dokumen | Fungsi |
+| Perintah | Fungsi |
 | --- | --- |
-| [AGENTS.md](AGENTS.md) | Aturan kerja untuk kontributor dan coding agent |
-| [PRD.md](PRD.md) | Tujuan, kebutuhan, scope usulan, dan kriteria penerimaan |
-| [DESIGN.md](DESIGN.md) | Referensi visual, token, komponen, dan responsivitas |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Struktur teknis dan catatan keputusan |
-| [DATA.md](DATA.md) | Kontrak serta pengelolaan konten hardcoded |
-| [API.md](API.md) | Batas integrasi dan pencatatan bahwa API belum dibutuhkan |
-| [TASKS.md](TASKS.md) | Tugas, dependensi, dan progres aktual |
-| [CHANGELOG.md](CHANGELOG.md) | Riwayat perubahan yang sudah dilakukan |
+| `npm run dev` | Development server lokal dengan hot reload |
+| `npm test` | Tes rendering data, konten kosong, dan keamanan tautan |
+| `npm run build` | Build produksi ke `dist/` |
+| `npm run preview` | Memeriksa hasil build melalui server lokal |
+| `npm run check` | Pemeriksaan sintaks, seluruh tes, build produksi, serta pemeriksaan HTML/aset hasil build |
 
-## Memakai paket ini
+## Mengubah konten
 
-Lokasi pengembangan yang diminta: folder `Project\Web-Porto` di dalam Documents laptop. Paket setup menyediakan script untuk menempatkan dokumen di sana dan membuat repository private `BolFengxi/Web-Porto` melalui GitHub CLI. Folder lokal dan repository baru tersedia setelah script berhasil dijalankan; keduanya belum dibuat dari sesi cloud penyusunan paket ini.
+Edit `src/data/portfolio.js` untuk nama, bio, CV, project, teknologi, dan kontak. `null` atau array kosong menyembunyikan konten opsional beserta navigasinya. Tidak ada tombol demo/CV ketika tujuannya belum tersedia. Teks dimasukkan sebagai teks biasa, bukan HTML.
 
-Tempatkan sembilan file Markdown di root repository Web Portofolio. Mulai dari `AGENTS.md` dan `PRD.md`, lalu lanjutkan pekerjaan di `TASKS.md`. Semua penanda **TBD** berarti keputusan atau informasi belum tersedia; jangan memperlakukannya sebagai nilai final.
+Bio memakai teks persis dari pemilik: “Undergraduate Computer Science student at University of Indonesia”. Kartu proyek dipilih dari repository public yang diverifikasi: Sporta Kuler, MinaToko, dan Neo Tube Automator. Bukti serta alasan pilihan ada di [project-selection.md](references/project-selection.md). CV, foto pribadi, screenshot proyek, demo live, dan kontak selain GitHub belum tersedia. Bahasa UI awal Inggris mengikuti bio serta referensi baru.
 
-Langkah berikutnya adalah menentukan adaptasi hero, konten publik, target pengunjung, bahasa, dan stack. Salinan referensi ada di `references/hero-reference.png` dalam paket ZIP. Gambar merupakan acuan visual; teks dan karakter di dalamnya bukan data portofolio.
+Untuk menambahkan CV lokal, letakkan file di `public/` lalu isi `profile.resume`, misalnya `/cv.pdf`. Jangan mengisi path sebelum berkasnya tersedia. Judul, deskripsi, dan Open Graph mengikuti data profil. Gunakan `metadata.title`/`metadata.description` untuk override; biarkan `metadata.siteUrl` bernilai `null` sampai domain yang sebenarnya tersedia. Canonical tidak dibuat sebelum URL HTTPS valid diberikan.
 
-## Menjalankan project
+## Struktur
 
-Belum tersedia karena aplikasi dan konfigurasinya belum dibuat. Setelah setup, isi bagian ini berdasarkan file konfigurasi aktual:
+```text
+index.html                 Halaman semantik dan template kartu
+vite.config.js             Plugin render HTML statis
+scripts/render-page.js     Render konten dan metadata saat build
+scripts/check-build.js     Verifikasi HTML/aset produksi
+src/ui.js                  Render konten dan aturan URL
+src/data/portfolio.js       Konten hardcoded
+src/styles.css             Token, komponen, dan responsivitas
+public/favicon.svg         Aset dekoratif asli
+test/                      Tes renderer, metadata, dan HTML statis
+references/                Referensi desain; tidak disajikan sebagai UI
+```
 
-| Informasi | Status |
-| --- | --- |
-| Stack dan versi runtime | TBD |
-| Package manager dan lockfile | TBD |
-| Perintah instalasi | TBD |
-| Perintah development | TBD |
-| Perintah build dan output | TBD |
-| Perintah lint/typecheck/test yang tersedia | TBD |
-| Environment variables | Belum ada kebutuhan aplikasi yang teridentifikasi |
-| Hosting, domain, dan URL deployment | TBD |
+Konten karya dan kontak sudah ada di HTML hasil build; tetap dapat digunakan saat JavaScript browser dinonaktifkan. CSS dimuat langsung melalui link stylesheet. Font nama memakai Pixelify Sans lokal berlisensi OFL-1.1; lisensi disertakan di `public/fonts/`. Font lain memakai stack sistem. Tidak ada permintaan font eksternal. Ilustrasi dekoratif dibangun memakai CSS; foto dan isi proyek pada referensi tidak disalin. Monogram pada kartu adalah dekorasi, bukan screenshot aplikasi. `dist/` dan `node_modules/` tidak di-commit.
 
-Jangan menjalankan atau mendokumentasikan script seolah sudah tersedia sebelum konfigurasinya dibuat.
+## Status dan verifikasi
 
-## Memperbarui konten dan dokumentasi
+Pemilik telah menerapkan patch pertama dan push branch `feat/comic-portfolio` ke GitHub. Perbaikan HTML statis dan redesign notebook disiapkan setelah commit remote tersebut. Akses tulis/PR integrasi masih ditolak (403), sehingga perubahan lanjutan disediakan sebagai patch terpisah; PR belum dibuat.
 
-Setelah implementasi tersedia, edit sumber konten lokal yang ditetapkan di `DATA.md`, periksa hasil tampilan dan tautannya, lalu build/deploy sesuai konfigurasi aktual. Saat kebutuhan berubah, perbarui dokumen sumbernya, tugas terkait, dan changelog. Jangan memasukkan kredensial atau informasi privat ke konten publik.
+`npm run check` berhasil: pemeriksaan sintaks, 10 tes, build produksi, serta pemeriksaan HTML, anchor, dan aset lokal. Build hanya menghasilkan HTML/CSS/favicon tanpa JavaScript browser. Tes DOM tidak memverifikasi layout, kontras, atau interaksi browser. Pemeriksaan visual di 360, 768, dan 1440 px, keyboard, zoom 200%, serta reduced motion masih perlu dilakukan di browser. Belum ada pengujian langsung pada Windows.
 
-## Status verifikasi
+Belum ada deployment. Target hosting/domain, konten publik final, dan persetujuan desain tetap terbuka. Folder di laptop tidak berubah otomatis ketika branch cloud diperbarui.
 
-Paket ini hanya berisi dokumentasi awal. Belum ada build aplikasi, pengujian browser, atau deployment yang dilakukan. Lisensi source serta izin publikasi aset belum ditentukan.
+## Dokumentasi
+
+Mulai dari [AGENTS.md](AGENTS.md), [PRD.md](PRD.md), dan [TASKS.md](TASKS.md). Detail lainnya: [DESIGN.md](DESIGN.md), [ARCHITECTURE.md](ARCHITECTURE.md), [DATA.md](DATA.md), [API.md](API.md), dan [CHANGELOG.md](CHANGELOG.md).
