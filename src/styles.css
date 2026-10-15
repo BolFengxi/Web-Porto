@@ -113,6 +113,7 @@
   .photo-print::before { content: ''; position: absolute; z-index: 1; top: -12px; left: 31%; width: 42%; height: 26px; background: #e2d5a5c9; transform: rotate(7deg); }
   .photo-print img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: contain; object-position: center bottom; background: #c8e4d6; }
   .photo-print figcaption { margin-top: 12px; text-align: center; font: 1rem/1.4 var(--hand); }
+  .photo-print:first-child figcaption { padding-left: 6px; text-align: left; }
   .photo-print + .photo-print { position: absolute; width: 51%; right: 4px; bottom: 5px; transform: rotate(6deg); }
   .photo-print + .photo-print::before { background: #eac0cbbd; transform: rotate(-9deg); }
   .photo-print + .photo-print img { object-fit: cover; background: #e7dfb9; }
