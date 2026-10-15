@@ -4,6 +4,14 @@ Catatan perubahan berarti pada project. Entri mencatat pekerjaan yang sudah dila
 
 ## [Unreleased]
 
+### Photos — 16 Oktober 2026
+
+- Dua foto pemilik ditambahkan ke About: potret kampus dengan latar transparan dan foto futsal asli dalam kolase polaroid dengan selotip pastel.
+- Aset WebP lokal, alt text, dimensi intrinsik, lazy loading, dan layout satu kolom di mobile. Tidak menambah JavaScript browser atau dependency.
+- Dua tes tambahan memeriksa gambar statis, path aman, foto opsional, anchor About, serta pembersihan foto saat data dihapus.
+- Status sebelumnya diperbarui: PR #2 sudah digabung ke main dan konten LinkedIn telah diverifikasi di produksi.
+
+
 ### Content — 15 Oktober 2026
 
 - Source disamakan dengan produksi `main` setelah merge PR #1 (`a004d99`). Pemilik menyatakan deployment Vercel telah selesai.

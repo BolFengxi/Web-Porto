@@ -14,7 +14,7 @@ Bio publik diberikan pemilik dan dipertahankan persis: `Undergraduate Computer S
 
 ## Konten latar belakang
 
-`about` opsional, berisi `summary`, `education`, dan `experience`. Pendidikan memakai `institution`, `program`, dan `qualification` opsional. Pengalaman memakai `title`, `organization` opsional, `period` opsional, serta array `details`. Nilai kosong tidak diganti dengan dugaan organisasi/tanggal. Semua teks dirender sebagai plain text.
+`about` opsional, berisi `summary`, `photos`, `education`, dan `experience`. Pendidikan memakai `institution`, `program`, dan `qualification` opsional. Pengalaman memakai `title`, `organization` opsional, `period` opsional, serta array `details`. Nilai kosong tidak diganti dengan dugaan organisasi/tanggal. Semua teks dirender sebagai plain text.
 
 Section `#profil` hanya tampil jika ada ringkasan atau record pendidikan/pengalaman yang valid. Navigasi About menunjuk ke section ini; jika tidak ada, ia kembali ke bio hero (`#tentang`) atau disembunyikan bila tidak ada keduanya. Pengosongan data juga menghapus record lama. LinkedIn tetap tautan biasa, tanpa API atau sinkronisasi otomatis. Sumber konten: `references/linkedin-content.md`.
 
@@ -72,3 +72,5 @@ Identitas, karya, dan kontak yang dibutuhkan untuk MVP harus dilengkapi sebelum 
 ## 6. Validasi
 
 Setelah stack dipilih, gunakan tipe atau struktur sederhana untuk menjaga konsistensi. Periksa ID unik, field wajib, tujuan tautan, keberadaan aset, dan kesesuaian antara navigasi dengan section. Tidak perlu database, migrasi, atau library validasi tambahan hanya untuk konten sederhana ini.
+
+Foto opsional: `about.photos` berisi maksimal dua record dengan `src` lokal `/photos/<nama>.webp`, `alt`, `caption` opsional, serta `width`/`height` positif. PNG/JPEG lokal juga didukung. Path eksternal, traversal, alt kosong, dan ukuran tidak valid tidak dirender. Menghapus foto menghapus elemen lama; About tetap bisa tampil dengan foto saja.
