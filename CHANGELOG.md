@@ -4,6 +4,18 @@ Catatan perubahan berarti pada project. Entri mencatat pekerjaan yang sudah dila
 
 ## [Unreleased]
 
+### Redesigned — 15 Oktober 2026
+
+- Referensi notebook baru menggantikan arah komik. DESIGN.md ditulis ulang; gambar baru disimpan di `references/hero-notebook-reference.png`, gambar lama dipertahankan sebagai riwayat.
+- Hero kertas bergaris, grid abu-abu, nama piksel ber-outline oranye tipis, catatan pastel, dan panel proyek seperti folder. Visual proyek berupa monogram dekoratif, bukan screenshot rekaan.
+- Bio publik dipakai persis: Undergraduate Computer Science student at University of Indonesia. About mengarah ke bio dalam hero agar tidak ada duplikasi kalimat.
+- Tiga proyek dipilih dari README/source public: Sporta Kuler (Django), MinaToko (Flutter), Neo Tube Automator (Python/Selenium). Alasan dan sumber ada di `references/project-selection.md`; tidak ada klaim impact atau demo live.
+- Font Pixelify Sans Latin 700 disimpan lokal bersama lisensi OFL-1.1. Font ini merupakan pilihan adaptasi, bukan identifikasi pasti font referensi.
+- Bahasa UI draft Inggris mengikuti bio/referensi; metadata memakai bio yang sama. Tidak ada JavaScript browser baru.
+- `npm run check` berhasil: 10 tes, build, dan verifikasi HTML/anchor/aset. Output sekitar 8.4 kB HTML dan 11.9 kB CSS sebelum gzip, ditambah font lokal. QA visual/browser/Windows tetap belum dilakukan.
+- Paket handoff memuat patch HTML statis dan patch notebook, dengan pemeriksaan baseline sebelum penerapan; akses tulis GitHub integrasi tetap belum tersedia.
+
+
 ### Improved — 15 Oktober 2026
 
 - Branch pertama yang di-push pemilik telah diverifikasi pada remote `feat/comic-portfolio` (commit `b1adaaf`). Iterasi kedua dibuat di atas commit tersebut.

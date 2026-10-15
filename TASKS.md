@@ -1,6 +1,6 @@
 # TASKS — Web Portofolio
 
-Status: iterasi kedua HTML statis tersedia; 10 tes, build, dan pemeriksaan hasil build berhasil; QA browser belum dilakukan.
+Status: redesign notebook, bio pemilik, dan tiga proyek terverifikasi tersedia; 10 tes/build berhasil; QA browser belum dilakukan.
 
 Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetujuan final.
 
@@ -13,7 +13,9 @@ Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetuj
 - [ ] PLAN-02 — Memilih stack, package manager, dan target hosting.
 - [ ] CONTENT-01 — Mengumpulkan identitas publik, headline, bio, project, aset, dan tautan kontak.
 - [x] DESIGN-01 — Menerima dan memeriksa referensi hero section.
-- [x] DESIGN-02 — Mendokumentasikan pola visual, token usulan, komposisi, dan aturan responsif awal di `DESIGN.md`.
+- [x] DESIGN-02 — Mendokumentasikan pola visual, token usulan, komposisi, dan responsivitas di `DESIGN.md`.
+- [x] DESIGN-04 — Menerima referensi notebook baru, mengganti DESIGN.md, dan menyimpan referensi komik sebagai riwayat.
+- [x] CONTENT-02 — Memakai bio persis dari pemilik serta memilih tiga proyek berdasarkan repo/source public; bukti dicatat di `references/project-selection.md`.
 - [ ] DESIGN-03 — Memfinalkan adaptasi portofolio, font, warna, dan aset berdasarkan referensi serta konten pemilik.
 
 ## Fase 1 — Setup
@@ -24,11 +26,11 @@ Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetuj
 - [x] SETUP-01 — Menyiapkan HTML/CSS/JavaScript + Vite dan npm sebagai pilihan implementasi awal. Hosting tetap TBD.
 - [x] SETUP-02 — Mencatat perintah install, dev, build, serta pemeriksaan aktual di `README.md`.
 - [x] DATA-01 — Membuat sumber data lokal mengikuti konten yang tersedia dan kontrak `DATA.md`.
-- [x] STYLE-01 — Membuat styles/token dasar untuk adaptasi komik draft; persetujuan akhir tetap pada DESIGN-03.
+- [x] STYLE-01 — Mengganti styles/token menjadi notebook/grid/pixel sesuai referensi terbaru; review visual tetap terbuka.
 
 ## Fase 2 — Implementasi
 
-- [x] UI-01 — Mengimplementasikan draft hero sesuai pola referensi, memakai nama Iqbal; review visual tetap terbuka.
+- [x] UI-01 — Mengganti hero dengan notebook, font piksel lokal, dan bio persis dari pemilik; review visual tetap terbuka.
 - [x] UI-02 — Mengimplementasikan navigasi anchor untuk section yang memiliki konten pada scope draft.
 - [x] UI-03 — Mengimplementasikan daftar project dengan aksi berdasarkan ketersediaan URL.
 - [ ] UI-04 — Menambahkan kontak dan CV bila asetnya tersedia.
@@ -39,7 +41,7 @@ Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetuj
 
 UI-01 bergantung pada DESIGN-03, DATA-01, dan setup. UI-02 sampai UI-04 bergantung pada PLAN-01 dan konten masing-masing. Pengumpulan konten serta pemilihan stack dapat berjalan sambil memfinalkan adaptasi visual.
 
-UI-04 masih menunggu kontak tambahan/CV; tautan GitHub terverifikasi sudah tersedia. PLAN-01/PLAN-02/DESIGN-03 tetap terbuka untuk finalisasi, meskipun pilihan implementasi awal sudah dipakai.
+UI-04 masih menunggu kontak tambahan/CV; tautan GitHub terverifikasi sudah tersedia. Bio tidak lagi kosong. Foto dan screenshot proyek belum diberikan, sehingga tidak dipasang. PLAN-01/PLAN-02/DESIGN-03 tetap terbuka untuk finalisasi, meskipun pilihan implementasi awal sudah dipakai.
 
 ## Fase 3 — Verifikasi
 
@@ -56,7 +58,7 @@ Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman;
 
 - [x] REPO-03 — Branch `feat/comic-portfolio` sudah di-push pemilik dan diverifikasi di remote.
 - [ ] REPO-04 — Membuat PR; API integrasi menolak akses pembuatan PR (403).
-- [ ] REPO-05 — Menerapkan dan push patch iterasi kedua yang dibuat berdasarkan commit remote `b1adaaf`.
+- [ ] REPO-05 — Menerapkan patch HTML statis bila belum dipasang, lalu patch redesign notebook, dan push. Paket handoff memeriksa baseline agar patch statis tidak diterapkan dua kali.
 
 - [ ] RELEASE-01 — Menyiapkan hasil yang dapat ditinjau pemilik dan menindaklanjuti revisi.
 - [ ] RELEASE-02 — Melakukan deployment setelah target dan instruksi rilis jelas.

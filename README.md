@@ -1,6 +1,6 @@
 # Web Porto
 
-Portofolio Iqbal dengan arah visual komik: bingkai hitam, halftone, ledakan kuning-oranye, dan tipografi ungu. Implementasi awal memakai HTML, CSS, JavaScript modules, dan Vite. Data hardcoded dirender menjadi HTML saat development/build; tidak ada JavaScript aplikasi di browser, backend, database, API eksternal, atau environment variable aplikasi.
+Portofolio Iqbal dengan arah visual notebook: kertas bergaris, latar grid, nama piksel, dan panel proyek seperti folder. Implementasi awal memakai HTML, CSS, JavaScript modules, dan Vite. Data hardcoded dirender menjadi HTML saat development/build; tidak ada JavaScript aplikasi di browser, backend, database, API eksternal, atau environment variable aplikasi.
 
 ## Menjalankan di laptop
 
@@ -23,9 +23,9 @@ Buka URL lokal yang dicetak Vite (biasanya `http://127.0.0.1:5173`). Hentikan de
 
 ## Mengubah konten
 
-Edit `src/data/portfolio.js` untuk nama, intro, bio, CV, project, teknologi, dan kontak. `null` atau array kosong menyembunyikan konten opsional beserta navigasinya. Tidak ada tombol demo/CV ketika tujuannya belum tersedia. Teks dimasukkan sebagai teks biasa, bukan HTML.
+Edit `src/data/portfolio.js` untuk nama, bio, CV, project, teknologi, dan kontak. `null` atau array kosong menyembunyikan konten opsional beserta navigasinya. Tidak ada tombol demo/CV ketika tujuannya belum tersedia. Teks dimasukkan sebagai teks biasa, bukan HTML.
 
-Saat ini hanya nama Iqbal, repository Web Porto, dan profil GitHub `BolFengxi` yang digunakan. Web Porto ditampilkan sebagai project nyata yang sedang dikembangkan. Bio, CV, pengalaman, skill personal, kontak lain, dan project lain menunggu konten pemilik. Copy pengantar dan struktur halaman merupakan draft implementasi untuk ditinjau.
+Bio memakai teks persis dari pemilik: “Undergraduate Computer Science student at University of Indonesia”. Kartu proyek dipilih dari repository public yang diverifikasi: Sporta Kuler, MinaToko, dan Neo Tube Automator. Bukti serta alasan pilihan ada di [project-selection.md](references/project-selection.md). CV, foto pribadi, screenshot proyek, demo live, dan kontak selain GitHub belum tersedia. Bahasa UI awal Inggris mengikuti bio serta referensi baru.
 
 Untuk menambahkan CV lokal, letakkan file di `public/` lalu isi `profile.resume`, misalnya `/cv.pdf`. Jangan mengisi path sebelum berkasnya tersedia. Judul, deskripsi, dan Open Graph mengikuti data profil. Gunakan `metadata.title`/`metadata.description` untuk override; biarkan `metadata.siteUrl` bernilai `null` sampai domain yang sebenarnya tersedia. Canonical tidak dibuat sebelum URL HTTPS valid diberikan.
 
@@ -44,11 +44,11 @@ test/                      Tes renderer, metadata, dan HTML statis
 references/                Referensi desain; tidak disajikan sebagai UI
 ```
 
-Konten karya dan kontak sudah ada di HTML hasil build; tetap dapat digunakan saat JavaScript browser dinonaktifkan. CSS dimuat langsung melalui link stylesheet. Font memakai stack sistem sehingga tidak ada permintaan font eksternal. Ilustrasi dekoratif dibangun memakai CSS; karakter dan gambar referensi tidak disalin ke halaman. `dist/` dan `node_modules/` tidak di-commit.
+Konten karya dan kontak sudah ada di HTML hasil build; tetap dapat digunakan saat JavaScript browser dinonaktifkan. CSS dimuat langsung melalui link stylesheet. Font nama memakai Pixelify Sans lokal berlisensi OFL-1.1; lisensi disertakan di `public/fonts/`. Font lain memakai stack sistem. Tidak ada permintaan font eksternal. Ilustrasi dekoratif dibangun memakai CSS; foto dan isi proyek pada referensi tidak disalin. Monogram pada kartu adalah dekorasi, bukan screenshot aplikasi. `dist/` dan `node_modules/` tidak di-commit.
 
 ## Status dan verifikasi
 
-Pemilik telah menerapkan patch pertama dan push branch `feat/comic-portfolio` ke GitHub. Iterasi berikutnya disiapkan dari commit remote tersebut. Akses tulis/PR integrasi masih ditolak (403), sehingga perubahan lanjutan disediakan sebagai patch terpisah; PR belum dibuat.
+Pemilik telah menerapkan patch pertama dan push branch `feat/comic-portfolio` ke GitHub. Perbaikan HTML statis dan redesign notebook disiapkan setelah commit remote tersebut. Akses tulis/PR integrasi masih ditolak (403), sehingga perubahan lanjutan disediakan sebagai patch terpisah; PR belum dibuat.
 
 `npm run check` berhasil: pemeriksaan sintaks, 10 tes, build produksi, serta pemeriksaan HTML, anchor, dan aset lokal. Build hanya menghasilkan HTML/CSS/favicon tanpa JavaScript browser. Tes DOM tidak memverifikasi layout, kontras, atau interaksi browser. Pemeriksaan visual di 360, 768, dan 1440 px, keyboard, zoom 200%, serta reduced motion masih perlu dilakukan di browser. Belum ada pengujian langsung pada Windows.
 

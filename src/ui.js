@@ -30,9 +30,8 @@ function externalLink(document, label, href, className = 'text-link') {
 export function renderPortfolio(document, data) {
   const { profile, projects = [], contacts = [] } = data;
   document.querySelectorAll('[data-name]').forEach((element) => { element.textContent = profile.displayName; });
-  document.querySelector('[data-intro]').textContent = profile.intro;
   document.querySelector('[data-year]').textContent = new Date().getFullYear();
-  document.querySelector('.wordmark').setAttribute('aria-label', `${profile.displayName}, ke beranda`);
+  document.querySelector('.wordmark').setAttribute('aria-label', `${profile.displayName}, home`);
 
   const resume = safeHref(profile.resume, { allowLocal: true });
   const hasBio = typeof profile.bio === 'string' && Boolean(profile.bio.trim());
@@ -56,7 +55,8 @@ export function renderPortfolio(document, data) {
   validProjects.forEach((project, index) => {
     const card = template.content.cloneNode(true);
     card.querySelector('.project-number').textContent = String(index + 1).padStart(2, '0');
-    card.querySelector('[data-project-monogram]').textContent = project.title;
+    card.querySelector('[data-project-monogram]').textContent = project.monogram ?? project.title.slice(0, 2).toUpperCase();
+    card.querySelector('[data-project-stack]').textContent = (project.technologies ?? []).slice(0, 2).join(' / ');
     card.querySelector('.project-category').textContent = project.category ?? 'PROJECT';
     card.querySelector('.project-title').textContent = project.title;
     card.querySelector('.project-summary').textContent = project.summary;
@@ -68,7 +68,7 @@ export function renderPortfolio(document, data) {
     });
     technologies.hidden = technologies.children.length === 0;
     const actions = card.querySelector('.project-actions');
-    [['Lihat website', project.demoUrl], ['Lihat source', project.repositoryUrl]].forEach(([label, value]) => {
+    [['View website', project.demoUrl], ['View source', project.repositoryUrl]].forEach(([label, value]) => {
       const href = safeHref(value);
       if (href) {
         const link = externalLink(document, label, href);

@@ -1,12 +1,16 @@
 # PRD — Web Portofolio
 
-Status: draft awal · Diperbarui: 15 Oktober 2026
+Status: draft notebook dan konten awal tersedia · Diperbarui: 15 Oktober 2026
 
 ## Perkembangan implementasi
 
 Pemilik menginstruksikan development dilanjutkan setelah repository GitHub dibuat. Draft pertama mengimplementasikan satu halaman berbahasa Indonesia: hero, karya, dan tautan GitHub; bagian tentang/CV hanya muncul bila datanya tersedia. Stack awal HTML/CSS/JavaScript + Vite dipilih agent, tanpa backend atau integrasi API. Repository serta konten awal tersedia; penentuan target pengunjung, bio, karya tambahan, desain final, dan hosting tetap terbuka.
 
-Iterasi kedua memastikan karya, kontak, navigasi, dan metadata tersedia pada HTML yang diterima browser, tanpa mengharuskan JavaScript aktif. Tidak ada perubahan scope biografi atau penambahan karya rekaan.
+Riwayat: iterasi kedua memastikan karya, kontak, navigasi, dan metadata tersedia pada HTML yang diterima browser, tanpa mengharuskan JavaScript aktif. Tidak ada perubahan scope biografi atau penambahan karya rekaan.
+
+## Arah terkini
+
+Implementasi notebook menggantikan tampilan komik. Bio ditampilkan persis dari pemilik. Sporta Kuler, MinaToko, dan Neo Tube Automator dipilih untuk variasi web/mobile/automation berdasarkan README dan source, tanpa klaim impact atau deployment. Bahasa UI awal Inggris mengikuti bio dan referensi; target pengunjung dan bahasa final masih dapat direvisi.
 
 ## 1. Tujuan
 
@@ -17,7 +21,9 @@ Membangun website portofolio pribadi Iqbal untuk memperkenalkan profil, menunjuk
 - Dokumentasi disiapkan sebelum implementasi.
 - Data website hardcoded.
 - Tidak ada kebutuhan mengambil data dari API eksternal saat ini.
-- Referensi visual hero sudah diterima: panel komik, halftone, border hitam tebal, dan warna neon; analisis ada di `DESIGN.md`.
+- Pemilik meminta desain komik diganti dengan referensi notebook: kertas bergaris, grid, nama piksel, dan aksen catatan tempel; acuan terbaru ada di `DESIGN.md`.
+- Bio publik yang diberikan: Undergraduate Computer Science student at University of Indonesia.
+- Pemilik meminta agent memilih proyek; tiga kandidat dipilih berdasarkan repository public yang dibaca.
 
 ## 3. Pengguna dan kebutuhan — usulan
 

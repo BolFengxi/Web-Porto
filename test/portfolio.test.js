@@ -13,7 +13,7 @@ function render(overrides = {}) {
 }
 
 test('missing optional content hides sections, navigation, and the hero CTA together', () => {
-  const document = render({ projects: [], contacts: [] });
+  const document = render({ projects: [], contacts: [], profile: { ...portfolio.profile, bio: null } });
   ['#karya', '#terhubung', '#tentang', '[data-project-link]', '[data-contact-link]', '[data-about-link]'].forEach((selector) => {
     document.querySelectorAll(selector).forEach((element) => assert.equal(element.hidden, true, selector));
   });
@@ -22,10 +22,12 @@ test('missing optional content hides sections, navigation, and the hero CTA toge
 
 test('current content links to the actual repository without inventing a demo or CV', () => {
   const document = render();
-  assert.equal(document.querySelectorAll('.project-card').length, 1);
-  assert.equal(document.querySelectorAll('.project-actions a').length, 1);
+  assert.equal(document.querySelectorAll('.project-card').length, portfolio.projects.length);
+  assert.equal(document.querySelectorAll('.project-actions a').length, portfolio.projects.length);
   assert.equal(document.querySelector('.project-actions a').getAttribute('href'), portfolio.projects[0].repositoryUrl);
-  assert.equal(document.querySelector('#tentang').hidden, true);
+  assert.equal(document.querySelector('#tentang').hidden, false);
+  assert.equal(document.querySelector('[data-bio]').textContent, 'Undergraduate Computer Science student at University of Indonesia');
+  assert.equal(document.querySelector('[data-resume]').hidden, true);
   assert.equal(document.querySelector('#contact-list a').getAttribute('href'), portfolio.contacts[0].href);
 });
 

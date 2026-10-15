@@ -17,14 +17,14 @@ export function renderPage(html, data) {
   const { document } = parseHTML(html);
   renderPortfolio(document, data);
   const { profile, metadata = {} } = data;
-  const title = metadata.title?.trim() || `${profile.displayName} — Web Portofolio`;
-  const description = metadata.description?.trim() || `Portofolio ${profile.displayName}. ${profile.intro}`;
+  const title = metadata.title?.trim() || `${profile.displayName} — Portfolio`;
+  const description = metadata.description?.trim() || `${profile.displayName}. ${profile.bio || 'Selected work and experiments.'}`;
   document.title = title;
   setMeta(document, { name: 'description' }, description);
   setMeta(document, { property: 'og:title' }, title);
   setMeta(document, { property: 'og:description' }, description);
   setMeta(document, { property: 'og:type' }, 'website');
-  setMeta(document, { property: 'og:locale' }, 'id_ID');
+  setMeta(document, { property: 'og:locale' }, 'en_US');
 
   // No canonical domain is guessed before the owner supplies one.
   document.head.querySelectorAll('link[rel="canonical"], meta[property="og:url"]').forEach((element) => element.remove());

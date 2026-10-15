@@ -6,11 +6,13 @@ Status: implementasi awal tersedia untuk review · Diperbarui: 15 Oktober 2026
 
 HTML, CSS, dan JavaScript modules memakai Vite sebagai dev server/bundler, npm serta `package-lock.json`. Pilihan teknis awal diambil agent untuk melanjutkan development; konfirmasi scope dan desain final tetap pada pemilik. Tidak ada framework UI atau dependency runtime. `linkedom` hanya dipakai untuk tes DOM dengan test runner Node.
 
-`index.html` menyediakan landmark, navigasi, hero, dan template kartu. `src/data/portfolio.js` menyimpan konten; `src/ui.js` mengisi teks dan merender kartu/link, menyembunyikan konten opsional kosong, serta menolak tujuan URL yang tidak diizinkan. Plugin lokal dalam `vite.config.js` menjalankan `scripts/render-page.js` untuk menghasilkan HTML lengkap pada development dan build; template kartu dihapus dari hasil akhir. Stylesheet ditautkan langsung. Tidak ada JavaScript browser yang diperlukan atau dikirim pada build produksi. `src/styles.css` berisi token dan breakpoint 850/600/359 px. Tidak ada state library atau layanan server aplikasi.
+`index.html` menyediakan landmark, navigasi, hero, dan template kartu. `src/data/portfolio.js` menyimpan konten; `src/ui.js` mengisi teks dan merender kartu/link, menyembunyikan konten opsional kosong, serta menolak tujuan URL yang tidak diizinkan. Plugin lokal dalam `vite.config.js` menjalankan `scripts/render-page.js` untuk menghasilkan HTML lengkap pada development dan build; template kartu dihapus dari hasil akhir. Stylesheet ditautkan langsung. Tidak ada JavaScript browser yang diperlukan atau dikirim pada build produksi. `src/styles.css` berisi token dan breakpoint 850/650/359 px. Tidak ada state library atau layanan server aplikasi.
 
 Metadata title, description, dan Open Graph mengikuti profil dengan override opsional di `metadata`. Canonical/`og:url` hanya ditambahkan bila `metadata.siteUrl` berisi URL HTTPS valid. `scripts/check-build.js` memeriksa HTML produksi, anchor terlihat, dan keberadaan aset lokal menggunakan path lintas Windows/Linux. HMR bawaan Vite hanya berlaku pada development, bukan output produksi.
 
 Build menghasilkan `dist/` untuk static hosting. Tidak ada konfigurasi hosting/deployment saat ini; pengembangan tetap melalui repository GitHub dan checkout lokal. Folder referensi tidak dimasukkan ke build produksi.
+
+Arah tampilan aktif: notebook/grid/pixel sesuai `DESIGN.md`. Bio kini diberikan pemilik; renderer menampilkannya sekali dalam hero dan About mengarah ke bagian tersebut. `public/fonts/` berisi font piksel lokal beserta lisensi. Tidak ada library UI atau JavaScript browser tambahan untuk redesign.
 
 ## 1. Dasar keputusan
 
