@@ -2,6 +2,10 @@
 
 Status: draft awal · Diperbarui: 15 Oktober 2026
 
+## Perkembangan implementasi
+
+Pemilik menginstruksikan development dilanjutkan setelah repository GitHub dibuat. Draft pertama mengimplementasikan satu halaman berbahasa Indonesia: hero, karya, dan tautan GitHub; bagian tentang/CV hanya muncul bila datanya tersedia. Stack awal HTML/CSS/JavaScript + Vite dipilih agent, tanpa backend atau integrasi API. Repository serta konten awal tersedia; penentuan target pengunjung, bio, karya tambahan, desain final, dan hosting tetap terbuka.
+
 ## 1. Tujuan
 
 Membangun website portofolio pribadi Iqbal untuk memperkenalkan profil, menunjukkan karya, dan menyediakan cara menghubungi pemilik. Rumusan tujuan ini merupakan usulan awal dan akan disesuaikan dengan target portofolio.
@@ -62,7 +66,7 @@ Verifikasi awal memakai skenario pengunjung: menemukan project, membuka tautan p
 | Informasi | Status | Dampak |
 | --- | --- | --- |
 | Referensi hero section | Diterima dan dianalisis; adaptasi akhir TBD | Komposisi dan sistem visual |
-| Stack dan target hosting | TBD | Setup, struktur, dan langkah menjalankan project |
+| Stack dan target hosting | HTML/CSS/JavaScript + Vite sebagai implementasi awal; hosting TBD | Setup, struktur, dan langkah menjalankan project |
 | Bahasa dan target pengunjung | TBD | Copy serta penekanan konten |
 | Identitas yang ingin ditampilkan | TBD | Nama publik, headline, foto, dan bio |
 | Project unggulan beserta aset/link | TBD | Isi bagian karya |

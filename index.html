@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#202020" />
+    <meta name="description" content="Portofolio Iqbal. Jelajahi karya dan proses di baliknya." />
+    <title>Iqbal — Web Portofolio</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Lewati navigasi</a>
+
+    <header class="site-header wrapper">
+      <a class="wordmark" href="#beranda" aria-label="Iqbal, ke beranda">
+        <span class="wordmark-symbol" aria-hidden="true">i!</span>
+        <span data-name>Iqbal</span><span class="wordmark-dot" aria-hidden="true">.</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <a class="nav-link" href="#karya" data-project-link>Karya <span aria-hidden="true">↙</span></a>
+        <a class="nav-link" href="#tentang" data-about-link hidden>Tentang</a>
+        <a class="nav-link nav-contact" href="#terhubung" data-contact-link>Terhubung <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main" class="wrapper">
+      <section id="beranda" class="hero" aria-labelledby="hero-title">
+        <div class="hero-topline">
+          <span class="edition">WEB PORTOFOLIO</span>
+          <span class="issue" aria-hidden="true">VOL. 01 / IQBAL</span>
+        </div>
+
+        <div class="hero-panel">
+          <div class="burst" aria-hidden="true"></div>
+          <div class="speed-lines" aria-hidden="true"></div>
+          <div class="hero-scribble scribble-left" aria-hidden="true">&lt;/&gt;</div>
+          <div class="hero-scribble scribble-right" aria-hidden="true">✳</div>
+          <div class="hello-sticker" aria-hidden="true">HALO, DUNIA!</div>
+
+          <div class="hero-content">
+            <p class="eyebrow">SELAMAT DATANG DI RUANG KARYA</p>
+            <h1 id="hero-title" class="hero-title" data-name>Iqbal</h1>
+            <p class="hero-description" data-intro>Ide, eksperimen, dan cerita di balik sebuah karya.</p>
+            <a class="button button-purple" href="#karya" data-project-link>
+              Jelajahi karya <span aria-hidden="true">↘</span>
+            </a>
+          </div>
+
+          <span class="corner-label" aria-hidden="true">SCROLL TO EXPLORE ↓</span>
+          <div class="hero-code" aria-hidden="true"><span>idea</span><b>→</b><span>create()</span></div>
+        </div>
+
+        <div class="hero-bottomline" aria-hidden="true">
+          <span>AN OPEN BOOK OF IDEAS.</span>
+          <span class="bottomline-stars">✳ ✳ ✳</span>
+          <span>LANJUT KE PANEL BERIKUTNYA ↓</span>
+        </div>
+      </section>
+
+      <section id="karya" class="work-section" aria-labelledby="work-title" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker"><span aria-hidden="true">01 /</span> KARYA</p>
+            <h2 id="work-title">Dari ide.<br /><span>Jadi karya.</span></h2>
+          </div>
+          <p class="section-description">Setiap karya punya cerita.<br />Ini salah satunya.</p>
+        </div>
+        <div class="project-list" id="project-list"></div>
+      </section>
+
+      <section id="tentang" class="about-section" aria-labelledby="about-title" hidden>
+        <p class="section-kicker">TENTANG</p>
+        <h2 id="about-title">Di balik halaman ini.</h2>
+        <p class="about-bio" data-bio></p>
+        <a class="button button-paper" data-resume hidden>Unduh CV <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section id="terhubung" class="contact-section" aria-labelledby="contact-title" hidden>
+        <div class="contact-decoration" aria-hidden="true">✳</div>
+        <div class="contact-content">
+          <p class="section-kicker">PANEL BERIKUTNYA?</p>
+          <h2 id="contact-title">Sampai ketemu<br /><span>di luar sini.</span></h2>
+          <div class="contact-list" id="contact-list"></div>
+        </div>
+        <span class="contact-sticker" aria-hidden="true">TO BE<br />CONTINUED…</span>
+      </section>
+    </main>
+
+    <footer class="site-footer wrapper">
+      <p>© <span data-year>2026</span> <span data-name>Iqbal</span></p>
+      <span class="footer-note">SEBUAH RUANG UNTUK KARYA.</span>
+      <a href="#beranda">Kembali ke atas <span aria-hidden="true">↑</span></a>
+    </footer>
+
+    <noscript><p class="noscript-note wrapper">Aktifkan JavaScript untuk melihat daftar karya dan tautan profil.</p></noscript>
+
+    <template id="project-template">
+      <article class="project-card">
+        <div class="project-visual" aria-hidden="true">
+          <span class="project-visual-grid"></span>
+          <span class="project-visual-label">THE MAKING OF</span>
+          <div class="mini-browser">
+            <div class="mini-browser-bar"><i></i><i></i><i></i><span>web-porto</span></div>
+            <div class="mini-browser-screen">
+              <span class="mini-kicker">WEB PORTOFOLIO</span>
+              <strong data-project-monogram></strong>
+              <span class="mini-button">HELLO, WORLD! ↗</span>
+            </div>
+          </div>
+          <span class="project-visual-star">✳</span>
+          <span class="project-number"></span>
+        </div>
+        <div class="project-content">
+          <p class="project-category"></p>
+          <h3 class="project-title"></h3>
+          <p class="project-summary"></p>
+          <ul class="technology-list" aria-label="Teknologi project"></ul>
+          <div class="project-actions"></div>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

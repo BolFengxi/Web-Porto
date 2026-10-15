@@ -1,6 +1,14 @@
 # DESIGN — Web Portofolio
 
-Status: referensi diterima; adaptasi implementasi masih draft · Diperbarui: 15 Oktober 2026
+Status: adaptasi awal sudah diimplementasikan, menunggu review visual · Diperbarui: 15 Oktober 2026
+
+## Implementasi awal
+
+Hero menerapkan panel pertama: border hitam, burst kuning dengan bidang oranye, halftone, nama Iqbal ungu ber-outline, serta CTA menuju karya. Kartu Web Porto memakai bidang cyan dan ilustrasi browser yang dibuat dengan CSS; bagian tautan profil memakai magenta/lime. Dekorasi tidak menyalin karakter, logo, atau screenshot referensi dan memakai `aria-hidden`.
+
+Font awal memakai stack sistem `Impact`, `Arial Black`, dan sans-serif; hasil font dapat berbeda antar-OS. Semua layout, warna, copy pengantar, dan font ini merupakan draft implementasi agent untuk ditinjau, bukan persetujuan final pemilik. Token aktual ada di `src/styles.css`.
+
+Breakpoint 850/600/359 px, focus indicator, skip link, target klik sekitar 44–52 px, dan `prefers-reduced-motion` sudah ditulis. Belum ada pengujian visual/browser pada 360/768/1440 px, zoom 200%, atau keyboard. Tidak ada klaim kelulusan aksesibilitas sebelum pemeriksaan tersebut.
 
 ## 1. Referensi dan status keputusan
 

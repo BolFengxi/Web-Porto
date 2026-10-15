@@ -5,7 +5,7 @@ Panduan kerja untuk kontributor dan coding agent pada project Web Portofolio.
 ## Konteks dan cakupan
 
 - Pemilik project: Iqbal.
-- Tahap saat ini: persiapan dokumentasi; implementasi website belum dimulai.
+- Tahap saat ini: implementasi awal HTML/CSS/JavaScript + Vite tersedia untuk review; konten dan desain final belum disetujui.
 - Data website hardcoded. Belum ada kebutuhan mengambil data dari API eksternal.
 - Referensi hero section sudah diterima; lihat `DESIGN.md` dan `references/hero-reference.png`.
 - Aturan ini berlaku untuk seluruh repository setelah file ini ditempatkan di root.

@@ -2,6 +2,8 @@
 
 Status: tidak ada kebutuhan API saat ini · Diperbarui: 15 Oktober 2026
 
+Implementasi awal menggunakan konten lokal dari `src/data/portfolio.js`. Link GitHub hanya navigasi keluar; tidak ada fetch API GitHub atau API data lainnya. Vite hanya menyediakan layanan development/build, bukan backend aplikasi.
+
 ## 1. Keputusan saat ini
 
 Data website hardcoded. Project tidak membutuhkan pengambilan data dari API eksternal. Arsitektur statis tanpa endpoint aplikasi merupakan usulan awal di `ARCHITECTURE.md`.

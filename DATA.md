@@ -1,6 +1,14 @@
 # DATA — Konten Hardcoded
 
-Status: rancangan kontrak konten · Diperbarui: 15 Oktober 2026
+Status: kontrak awal diimplementasikan · Diperbarui: 15 Oktober 2026
+
+## Sumber aktual
+
+Konten ada di `src/data/portfolio.js`: `profile`, `projects`, dan `contacts`. Field profil aktual: `displayName`, `intro`, `bio`, `resume`. Project menggunakan `id`, `title`, `category`, `summary`, `technologies`, `repositoryUrl`, `demoUrl`. Kontak menggunakan `id`, `label`, `href`. Field lain dalam rancangan di bawah belum diimplementasikan.
+
+Identitas awal hanya Iqbal dan tautan GitHub yang terverifikasi. Web Porto sendiri menjadi satu project nyata berstatus pengembangan. Intro merupakan copy draft, bukan klaim pengalaman. Bio dan CV bernilai `null`. Teknologi pada kartu menjelaskan implementasi project ini, bukan tingkat keahlian personal.
+
+`src/ui.js` merender teks melalui `textContent`, menghilangkan ID project duplikat/konten wajib kosong, dan mengizinkan URL HTTPS atau mailto yang valid. Path absolut lokal hanya diizinkan untuk CV. Link kosong atau berbahaya tidak ditampilkan. Section dan navigasi terkait disembunyikan bersama jika tidak ada konten. Metadata judul/deskripsi tetap statis di `index.html`.
 
 ## 1. Mengapa dokumen ini ada
 
@@ -9,8 +17,8 @@ Tidak diperlukan database untuk kebutuhan saat ini. Dokumen ini menjaga nama fie
 ## 2. Sumber dan kepemilikan
 
 - Pemilik project menyediakan fakta, narasi, aset, dan tautan yang boleh dipublikasikan.
-- Data disimpan dalam file lokal yang sesuai stack; lokasi usulan: `src/data/portfolio.*`.
-- Belum ada file data aplikasi atau konten portofolio lengkap yang dibuat.
+- Data disimpan dalam `src/data/portfolio.js`.
+- Konten awal tersedia; konten portofolio lengkap masih menunggu pemilik.
 - Perubahan konten dilakukan melalui source, lalu build/deploy ulang sesuai arsitektur terpilih.
 - Seluruh field berikut merupakan usulan dan dapat disederhanakan setelah konten diterima.
 
