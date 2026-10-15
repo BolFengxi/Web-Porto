@@ -82,3 +82,5 @@ Runtime: Node.js 22.12+ (seri 22) atau 24+. Package manager: npm. Perintah aktua
 | A-06 | Hosting dan domain | TBD | Belum ada instruksi deployment |
 
 Bila scope berubah, perbarui kebutuhan di `PRD.md`, kontrak konten di `DATA.md`, batas integrasi di `API.md`, dan tugas implementasinya.
+
+Foto pemilik disimpan sebagai aset statis WebP dalam `public/photos/`. Renderer merender maksimal dua foto lokal beserta alt text dan dimensi; CSS membangun bingkai polaroid dan kolase responsif. Tidak ada image service, library galeri, atau JavaScript browser tambahan.

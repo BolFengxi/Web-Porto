@@ -55,3 +55,34 @@ test('clearing background removes old records and restores a valid hero About an
   renderPortfolio(document, { ...portfolio, about: null, profile: { ...portfolio.profile, bio: null } });
   assert.equal(document.querySelector('[data-about-link]').hidden, true);
 });
+
+test('owner photos are accessible static assets with reserved space and deferred loading', () => {
+  const { document } = parseHTML(renderPage(html, portfolio));
+  const images = document.querySelectorAll('[data-about-photos] img');
+  assert.equal(images.length, 2);
+  for (const image of images) {
+    assert.ok(image.getAttribute('src').startsWith('/photos/'));
+    assert.ok(image.getAttribute('alt').trim());
+    assert.ok(Number(image.getAttribute('width')) > 0 && Number(image.getAttribute('height')) > 0);
+    assert.equal(image.getAttribute('loading'), 'lazy');
+  }
+});
+
+test('photo-only About stays reachable; removing photos clears stale images and rejects unsafe paths', () => {
+  const { document } = parseHTML(html);
+  const photo = portfolio.about.photos[0];
+  renderPortfolio(document, { ...portfolio, about: { photos: [photo] } });
+  assert.equal(document.querySelector('#profil').hidden, false);
+  assert.equal(document.querySelector('[data-about-details]').hidden, true);
+  assert.equal(document.querySelector('[data-about-link]').getAttribute('href'), '#profil');
+  renderPortfolio(document, { ...portfolio, about: { photos: [
+    { ...photo, src: 'https://example.org/photo.jpg' },
+    { ...photo, src: '/photos/../private.png' },
+    { ...photo, alt: '' },
+    { ...photo, width: 0 },
+  ] } });
+  assert.equal(document.querySelectorAll('[data-about-photos] img').length, 0);
+  assert.equal(document.querySelector('[data-about-photos]').hidden, true);
+  assert.equal(document.querySelector('#profil').hidden, true);
+  assert.equal(document.querySelector('[data-about-link]').getAttribute('href'), '#tentang');
+});

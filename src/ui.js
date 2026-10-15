@@ -93,6 +93,28 @@ export function renderPortfolio(document, data) {
 
 function renderBackground(document, data) {
   const about = data.about ?? {};
+  const photoList = document.querySelector('[data-about-photos]');
+  photoList.replaceChildren();
+  (about.photos ?? []).filter((photo) => /^\/photos\/[a-z0-9][a-z0-9-]*\.(png|webp|jpe?g)$/i.test(photo.src) && photo.alt?.trim()
+    && Number.isInteger(photo.width) && photo.width > 0 && Number.isInteger(photo.height) && photo.height > 0).slice(0, 2).forEach((photo) => {
+    const figure = document.createElement('figure');
+    figure.className = 'photo-print';
+    const image = document.createElement('img');
+    image.setAttribute('src', photo.src);
+    image.setAttribute('alt', photo.alt);
+    image.setAttribute('width', String(photo.width));
+    image.setAttribute('height', String(photo.height));
+    image.setAttribute('loading', 'lazy');
+    image.setAttribute('decoding', 'async');
+    figure.append(image);
+    if (photo.caption?.trim()) {
+      const caption = document.createElement('figcaption');
+      caption.textContent = photo.caption;
+      figure.append(caption);
+    }
+    photoList.append(figure);
+  });
+  photoList.hidden = photoList.children.length === 0;
   const summary = typeof about.summary === 'string' ? about.summary.trim() : '';
   document.querySelector('[data-full-name]').textContent = data.profile.fullName ?? data.profile.displayName;
   document.querySelector('[data-about-summary]').textContent = summary;
@@ -124,8 +146,9 @@ function renderBackground(document, data) {
   });
   setVisible(document, '[data-experience-group]', experienceList.children.length > 0);
   setVisible(document, '[data-background-notes]', educationList.children.length > 0 || experienceList.children.length > 0);
+  setVisible(document, '[data-about-details]', Boolean(summary || educationList.children.length || experienceList.children.length));
 
-  const hasBackground = Boolean(summary || educationList.children.length || experienceList.children.length);
+  const hasBackground = Boolean(summary || educationList.children.length || experienceList.children.length || photoList.children.length);
   setVisible(document, '#profil', hasBackground);
   const hasHeroAbout = !document.querySelector('#tentang').hidden;
   setVisible(document, '[data-about-link]', hasBackground || hasHeroAbout);

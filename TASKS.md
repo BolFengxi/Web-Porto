@@ -1,6 +1,6 @@
 # TASKS — Web Portofolio
 
-Status: redesign notebook, bio pemilik, dan tiga proyek terverifikasi tersedia; 14 tes/build berhasil; QA browser belum dilakukan.
+Status: redesign notebook, bio pemilik, dan tiga proyek terverifikasi tersedia; 16 tes/build berhasil; QA browser belum dilakukan.
 
 Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetujuan final.
 
@@ -16,6 +16,7 @@ Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetuj
 - [x] DESIGN-02 — Mendokumentasikan pola visual, token usulan, komposisi, dan responsivitas di `DESIGN.md`.
 - [x] DESIGN-04 — Menerima referensi notebook baru, mengganti DESIGN.md, dan menyimpan referensi komik sebagai riwayat.
 - [x] CONTENT-02 — Memakai bio persis dari pemilik serta memilih tiga proyek berdasarkan repo/source public; bukti dicatat di `references/project-selection.md`.
+- [x] CONTENT-04 — Memasang dua foto pemilik dengan cutout transparan dan bingkai polaroid CSS.
 - [x] CONTENT-03 — Menambahkan About, pendidikan, pengalaman terverifikasi dari cuplikan LinkedIn, dan tautan LinkedIn; batas sumber dicatat.
 - [ ] DESIGN-03 — Memfinalkan adaptasi portofolio, font, warna, dan aset berdasarkan referensi serta konten pemilik.
 
@@ -42,7 +43,7 @@ Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetuj
 
 UI-01 bergantung pada DESIGN-03, DATA-01, dan setup. UI-02 sampai UI-04 bergantung pada PLAN-01 dan konten masing-masing. Pengumpulan konten serta pemilihan stack dapat berjalan sambil memfinalkan adaptasi visual.
 
-UI-04 masih menunggu kontak tambahan/CV; tautan GitHub terverifikasi sudah tersedia. Bio tidak lagi kosong. Foto dan screenshot proyek belum diberikan, sehingga tidak dipasang. PLAN-01/PLAN-02/DESIGN-03 tetap terbuka untuk finalisasi, meskipun pilihan implementasi awal sudah dipakai.
+UI-04 masih menunggu kontak tambahan/CV; tautan GitHub terverifikasi sudah tersedia. Bio tidak lagi kosong. Dua foto pemilik sudah diberikan dan dipasang sebagai kolase polaroid; screenshot proyek belum diberikan. PLAN-01/PLAN-02/DESIGN-03 tetap terbuka untuk finalisasi, meskipun pilihan implementasi awal sudah dipakai.
 
 ## Fase 3 — Verifikasi
 
@@ -51,7 +52,7 @@ UI-04 masih menunggu kontak tambahan/CV; tautan GitHub terverifikasi sudah terse
 - [ ] QA-03 — Memeriksa seluruh link, navigasi, menu mobile jika ada, dan CTA.
 - [ ] QA-04 — Memeriksa keyboard, focus, heading, alt text, dan kontras.
 - [ ] QA-05 — Memastikan tidak ada placeholder publik, fakta rekaan, aset hilang, atau secret.
-- [x] QA-06 — `npm run check` berhasil: pemeriksaan sintaks, 14 tes DOM/metadata/URL/latar belakang, build Vite, dan pemeriksaan HTML/aset produksi.
+- [x] QA-06 — `npm run check` berhasil: pemeriksaan sintaks, 16 tes DOM/metadata/URL/latar belakang, build Vite, dan pemeriksaan HTML/aset produksi.
 
 Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman; tes ini tidak menggantikan QA visual/browser. QA browser dilewati karena kontrol browser yang didukung tidak tersedia pada lingkungan ini.
 
@@ -60,11 +61,12 @@ Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman;
 - [x] REPO-03 — Branch `feat/comic-portfolio` sudah di-push pemilik dan diverifikasi di remote.
 - [x] REPO-04 — PR #1 telah digabung pemilik ke `main`, diverifikasi pada commit `a004d99`.
 - [x] REPO-05 — HTML statis dan notebook telah masuk `main`.
-- [ ] REPO-07 — Menerapkan patch konten LinkedIn ke main dan memeriksa deployment ulang Vercel.
+- [x] REPO-07 — Konten LinkedIn digabung melalui PR #2 (`1c0ec90`) dan tampil di produksi.
+- [ ] REPO-08 — Mengunggah penambahan foto, memeriksa preview, dan memverifikasi produksi setelah merge.
 
 - [ ] RELEASE-01 — Menyiapkan hasil yang dapat ditinjau pemilik dan menindaklanjuti revisi.
 - [x] RELEASE-02 — Pemilik menyatakan deployment Vercel sudah berhasil; URL/hasil live masih perlu diperiksa pada RELEASE-03.
-- [ ] RELEASE-03 — Memeriksa versi yang terdeploy dan mencatat URL serta hasil verifikasi.
+- [x] RELEASE-03 — Versi LinkedIn diverifikasi pada https://web-porto-mu-eight.vercel.app/; foto diverifikasi terpisah di REPO-08.
 - [ ] RELEASE-04 — Memperbarui README, changelog, dan status tugas berdasarkan hasil nyata.
 
 ## Definisi selesai

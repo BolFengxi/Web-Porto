@@ -14,6 +14,10 @@ export const portfolio = {
     siteUrl: null,
   },
   about: {
+    photos: [
+      { src: '/photos/iqbal-campus-cutout.webp', alt: 'Iqbal wearing glasses and a yellow Universitas Indonesia blazer.', caption: 'on campus', width: 1087, height: 1447 },
+      { src: '/photos/iqbal-futsal.webp', alt: 'Iqbal on an indoor futsal court, holding a trophy and a third-place Sportfest 2026 board.', caption: 'beyond the screen', width: 1200, height: 1600 },
+    ],
     summary: 'My projects span web applications, Flutter apps, and Python automation. Alongside building software, I have experience in teaching assistance and student organization treasury.',
     education: [
       { institution: 'Universitas Indonesia', program: 'Computer Science', qualification: 'Undergraduate' },

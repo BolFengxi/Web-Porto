@@ -1,6 +1,6 @@
 # DESIGN — Web Porto
 
-Status: arah notebook menggantikan desain komik; implementasi pertama tersedia untuk review. Diperbarui: 15 Oktober 2026.
+Status: arah notebook menggantikan desain komik; implementasi pertama tersedia untuk review. Diperbarui: 16 Oktober 2026.
 
 ## 1. Acuan aktif
 
@@ -28,7 +28,7 @@ Robin, Product Designer, Chicago, status tersedia untuk kerja, foto, akun sosial
 - Satu lembar notebook di atas latar grid, dengan navigasi Home / About / Projects dan Contact.
 - Nama `Iqbal` menjadi fokus utama memakai font piksel lokal; outline oranye tipis menggantikan ledakan dan outline tebal desain lama.
 - Bio ditampilkan persis: **Undergraduate Computer Science student at University of Indonesia**.
-- About kini mengarah ke section `#profil`: ringkasan singkat dalam catatan kertas dan daftar Education/Experience. Bio hero tetap persis dan tidak diulang. Jika data tambahan dihapus, navigasi kembali ke bio hero. Foto pribadi tetap menunggu aset pemilik.
+- About kini mengarah ke section `#profil`: ringkasan singkat dalam catatan kertas dan daftar Education/Experience. Bio hero tetap persis dan tidak diulang. Jika data tambahan dihapus, navigasi kembali ke bio hero. Dua foto pemilik ditampilkan dalam kolase polaroid di sebelah ringkasan dan latar belakang.
 - CTA Explore my work mengarah ke karya; Contact menuju bagian tautan GitHub yang benar-benar tersedia.
 - Tiga proyek awal: Sporta Kuler, MinaToko, Neo Tube Automator. Alasan dan sumbernya ada di [project-selection.md](references/project-selection.md).
 - Panel proyek memakai tab folder dekoratif dan lembar monogram berselotip. Monogram adalah dekorasi tipografis, bukan screenshot aplikasi. Tidak ada kontrol tab palsu.
@@ -69,11 +69,19 @@ Desktop menampilkan hero terpusat, lalu panel proyek dua kolom: deskripsi di kir
 
 Tidak ada intro wajib klik, filter, carousel, atau animasi dekoratif berulang. Tautan anchor bekerja tanpa JavaScript browser. Hover CTA hanya bergerak singkat; reduced motion menonaktifkannya. Focus outline oranye dan skip link disediakan. Area interaksi umumnya minimal 44 px; target navigasi desktop yang lebih ringkas perlu diverifikasi saat QA.
 
-Section profil memakai dua kolom pada desktop (catatan ringkasan dan latar belakang), lalu satu kolom di bawah 650 px. Tidak ada foto, garis waktu, metrik, atau logo organisasi rekaan.
+Section profil memakai dua kolom pada desktop (catatan ringkasan dan latar belakang), lalu satu kolom di bawah 650 px. Kolase foto berada di kolom kiri; ringkasan serta Education/Experience di kanan. Di mobile, kolase berada di atas teks. Tidak ada garis waktu, metrik, atau logo organisasi rekaan.
 
 ## 7. Verifikasi
 
 - Pemeriksaan sintaks, tes renderer/metadata, dan build produksi dilakukan melalui `npm run check`.
 - Tes memeriksa bio persis, proyek nyata, bagian opsional, tujuan tautan, teks aman, serta HTML yang tidak membutuhkan JavaScript browser.
 - QA visual belum dilakukan: 360/768/1440 px, zoom 200%, font lokal, teks panjang, kontras, dan navigasi keyboard masih harus diperiksa di browser.
-- Foto pribadi, screenshot proyek, dan CV belum tersedia. Jangan menggantikannya dengan aset orang lain atau mockup yang seolah hasil aplikasi sebenarnya.
+- Foto pribadi telah diberikan; screenshot proyek dan CV belum tersedia. Jangan menggantikannya dengan aset orang lain atau mockup yang seolah hasil aplikasi sebenarnya.
+
+## 8. Foto pemilik — 16 Oktober 2026
+
+- Sumber: dua unggahan pemilik, potret jaket kuning di kampus dan foto di lapangan futsal. Foto bukan stok dan tidak dipakai sebagai klaim pencapaian baru.
+- Potret utama dipisahkan dari latarnya menggunakan built-in imagegen. Prompt: hapus seluruh latar, pertahankan identitas, wajah, kacamata, rambut, ekspresi, pose, proporsi, jaket kuning, bendera, emblem, serta tangan; alpha transparan, tanpa objek baru, teks, border, bayangan, atau retouch wajah.
+- File hasil: `public/photos/iqbal-campus-cutout.webp`; alpha dipertahankan dengan encoding WebP lossless. Foto futsal `public/photos/iqbal-futsal.webp` berasal dari unggahan asli, dikodekan WebP untuk pengiriman tanpa mengubah komposisi. File unggahan asli tidak ditimpa.
+- Bingkai putih hangat, latar mint, selotip krem/pink, rotasi ringan, dan bayangan kertas dibuat lewat CSS. Wajah tidak diberi filter, efek piksel, atau pewarnaan.
+- Gambar memakai alt text, dimensi intrinsik, lazy loading, dan async decoding. Kolase tidak menutupi ringkasan atau navigasi dan tetap tidak membutuhkan JavaScript browser.
