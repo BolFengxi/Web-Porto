@@ -1,6 +1,6 @@
 # TASKS — Web Portofolio
 
-Status: draft implementasi pertama tersedia; enam tes dan build produksi berhasil, QA browser belum dilakukan.
+Status: iterasi kedua HTML statis tersedia; 10 tes, build, dan pemeriksaan hasil build berhasil; QA browser belum dilakukan.
 
 Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetujuan final.
 
@@ -33,7 +33,9 @@ Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetuj
 - [x] UI-03 — Mengimplementasikan daftar project dengan aksi berdasarkan ketersediaan URL.
 - [ ] UI-04 — Menambahkan kontak dan CV bila asetnya tersedia.
 - [x] UI-05 — Menulis breakpoint mobile/tablet/desktop dan reduced motion; verifikasi visual masih QA-02/QA-04.
-- [x] META-01 — Mengisi metadata halaman dari data terverifikasi; domain tetap kosong sampai tersedia.
+- [x] META-01 — Membuat title/description/Open Graph dari profil; canonical hanya untuk URL HTTPS yang diberikan pemilik.
+- [x] STATIC-01 — Menyajikan karya, kontak, navigasi, dan stylesheet tanpa JavaScript browser.
+- [x] BUILD-01 — Memeriksa anchor dan keberadaan aset lokal hasil build.
 
 UI-01 bergantung pada DESIGN-03, DATA-01, dan setup. UI-02 sampai UI-04 bergantung pada PLAN-01 dan konten masing-masing. Pengumpulan konten serta pemilihan stack dapat berjalan sambil memfinalkan adaptasi visual.
 
@@ -46,13 +48,15 @@ UI-04 masih menunggu kontak tambahan/CV; tautan GitHub terverifikasi sudah terse
 - [ ] QA-03 — Memeriksa seluruh link, navigasi, menu mobile jika ada, dan CTA.
 - [ ] QA-04 — Memeriksa keyboard, focus, heading, alt text, dan kontras.
 - [ ] QA-05 — Memastikan tidak ada placeholder publik, fakta rekaan, aset hilang, atau secret.
-- [x] QA-06 — `npm run check` berhasil: pemeriksaan sintaks, enam tes DOM/URL, dan build Vite produksi.
+- [x] QA-06 — `npm run check` berhasil: pemeriksaan sintaks, 10 tes DOM/metadata/URL, build Vite, dan pemeriksaan HTML/aset produksi.
 
 Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman; tes ini tidak menggantikan QA visual/browser. QA browser dilewati karena kontrol browser yang didukung tidak tersedia pada lingkungan ini.
 
 ## Fase 4 — Rilis
 
-- [ ] REPO-03 — Mengirim branch `feat/comic-portfolio` ke GitHub dan membuat PR. Akses tulis integrasi ditolak (403); implementasi lokal diserahkan sebagai patch.
+- [x] REPO-03 — Branch `feat/comic-portfolio` sudah di-push pemilik dan diverifikasi di remote.
+- [ ] REPO-04 — Membuat PR; API integrasi menolak akses pembuatan PR (403).
+- [ ] REPO-05 — Menerapkan dan push patch iterasi kedua yang dibuat berdasarkan commit remote `b1adaaf`.
 
 - [ ] RELEASE-01 — Menyiapkan hasil yang dapat ditinjau pemilik dan menindaklanjuti revisi.
 - [ ] RELEASE-02 — Melakukan deployment setelah target dan instruksi rilis jelas.

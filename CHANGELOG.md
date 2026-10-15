@@ -4,6 +4,17 @@ Catatan perubahan berarti pada project. Entri mencatat pekerjaan yang sudah dila
 
 ## [Unreleased]
 
+### Improved — 15 Oktober 2026
+
+- Branch pertama yang di-push pemilik telah diverifikasi pada remote `feat/comic-portfolio` (commit `b1adaaf`). Iterasi kedua dibuat di atas commit tersebut.
+- Karya, kontak, serta navigasi dirender ke HTML saat development/build. CSS ditautkan langsung; JavaScript aplikasi tidak dikirim ke browser produksi.
+- Metadata title/description/Open Graph mengikuti data profil dengan override opsional. Canonical dan `og:url` hanya muncul setelah URL HTTPS valid disediakan.
+- Template kartu dihapus dari HTML akhir. Skip link memiliki target main yang dapat menerima fokus; teks panjang mendapat aturan wrap.
+- `npm run check` berhasil dengan 10 tes, build Vite, serta pemeriksaan HTML produksi, anchor, dan aset lokal. Output sekitar 6.4 kB HTML dan 14.5 kB CSS sebelum gzip; tidak ada file JavaScript browser.
+- Patch handoff lokal dikecualikan dari Git agar tidak ikut ter-commit.
+- API pembuatan PR juga ditolak integrasi (403); PR belum dibuat. Iterasi kedua disiapkan sebagai patch. QA browser, Windows, konten final, dan deployment belum dilakukan.
+
+
 ### Implemented — 15 Oktober 2026
 
 - Fondasi HTML/CSS/JavaScript modules + Vite 8.3.4, npm, dan lockfile; tanpa dependency runtime atau API eksternal.

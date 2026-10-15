@@ -20,3 +20,6 @@ coverage/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Local handoff patches
+/Web-Porto-*.patch

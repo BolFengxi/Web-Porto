@@ -8,7 +8,9 @@ Konten ada di `src/data/portfolio.js`: `profile`, `projects`, dan `contacts`. Fi
 
 Identitas awal hanya Iqbal dan tautan GitHub yang terverifikasi. Web Porto sendiri menjadi satu project nyata berstatus pengembangan. Intro merupakan copy draft, bukan klaim pengalaman. Bio dan CV bernilai `null`. Teknologi pada kartu menjelaskan implementasi project ini, bukan tingkat keahlian personal.
 
-`src/ui.js` merender teks melalui `textContent`, menghilangkan ID project duplikat/konten wajib kosong, dan mengizinkan URL HTTPS atau mailto yang valid. Path absolut lokal hanya diizinkan untuk CV. Link kosong atau berbahaya tidak ditampilkan. Section dan navigasi terkait disembunyikan bersama jika tidak ada konten. Metadata judul/deskripsi tetap statis di `index.html`.
+`src/ui.js` merender teks melalui `textContent`, menghilangkan ID project duplikat/konten wajib kosong, dan mengizinkan URL HTTPS atau mailto yang valid. Path absolut lokal hanya diizinkan untuk CV. Link kosong atau berbahaya tidak ditampilkan. Section dan navigasi terkait disembunyikan bersama jika tidak ada konten. Renderer dijalankan saat development/build oleh `scripts/render-page.js`, sehingga hasil HTML tetap lengkap tanpa JavaScript browser.
+
+`metadata.title` dan `metadata.description` opsional; nilai `null` menggunakan nama serta intro profil. `metadata.siteUrl` tetap `null` sampai domain diberikan; canonical dan `og:url` hanya dibuat untuk URL HTTPS valid. Open Graph title/description mengikuti metadata yang sama. Jangan mengisi domain contoh pada data publik. Build memeriksa file lokal yang dirujuk HTML, termasuk CV bila sudah ditambahkan.
 
 ## 1. Mengapa dokumen ini ada
 

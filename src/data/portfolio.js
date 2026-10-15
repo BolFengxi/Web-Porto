@@ -7,6 +7,12 @@ export const portfolio = {
     bio: null,
     resume: null,
   },
+  // Optional overrides. Title/description otherwise follow the profile.
+  metadata: {
+    title: null,
+    description: null,
+    siteUrl: null,
+  },
   projects: [
     {
       id: 'web-porto',

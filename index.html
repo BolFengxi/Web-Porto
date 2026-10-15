@@ -7,7 +7,7 @@
     <meta name="description" content="Portofolio Iqbal. Jelajahi karya dan proses di baliknya." />
     <title>Iqbal — Web Portofolio</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script type="module" src="/src/main.js"></script>
+    <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Lewati navigasi</a>
@@ -24,7 +24,7 @@
       </nav>
     </header>
 
-    <main id="main" class="wrapper">
+    <main id="main" class="wrapper" tabindex="-1">
       <section id="beranda" class="hero" aria-labelledby="hero-title">
         <div class="hero-topline">
           <span class="edition">WEB PORTOFOLIO</span>
@@ -92,8 +92,6 @@
       <span class="footer-note">SEBUAH RUANG UNTUK KARYA.</span>
       <a href="#beranda">Kembali ke atas <span aria-hidden="true">↑</span></a>
     </footer>
-
-    <noscript><p class="noscript-note wrapper">Aktifkan JavaScript untuk melihat daftar karya dan tautan profil.</p></noscript>
 
     <template id="project-template">
       <article class="project-card">

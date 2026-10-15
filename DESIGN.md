@@ -10,6 +10,8 @@ Font awal memakai stack sistem `Impact`, `Arial Black`, dan sans-serif; hasil fo
 
 Breakpoint 850/600/359 px, focus indicator, skip link, target klik sekitar 44–52 px, dan `prefers-reduced-motion` sudah ditulis. Belum ada pengujian visual/browser pada 360/768/1440 px, zoom 200%, atau keyboard. Tidak ada klaim kelulusan aksesibilitas sebelum pemeriksaan tersebut.
 
+Pada iterasi kedua, CSS ditautkan langsung dan konten telah tersedia di HTML awal, sehingga pengunjung tidak perlu JavaScript untuk membaca karya atau membuka tautan. Skip link menargetkan elemen main yang dapat menerima fokus; teks panjang mendapat aturan wrap. Perubahan ini belum menggantikan QA browser yang masih terbuka.
+
 ## 1. Referensi dan status keputusan
 
 Sumber: lampiran pemilik `image.png`, tersedia sebagai [hero-reference.png](references/hero-reference.png) dalam paket dokumentasi.
