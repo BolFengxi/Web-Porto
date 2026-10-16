@@ -1,6 +1,6 @@
 # TASKS — Web Portofolio
 
-Status: konten, foto, dan desain notebook tersedia di produksi. Entrance selesai di source; 22 tes/build berhasil. Rilis entrance dan QA browser terarah menyusul.
+Status: konten, foto, dan desain notebook tersedia di produksi. Entrance telah digabung melalui PR #4 (`fad57cf`) dan deployment produksi berhasil; 22 tes/build lolos. QA interaksi live menunggu autentikasi Vercel.
 
 Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetujuan final.
 
@@ -64,7 +64,8 @@ Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman;
 - [x] REPO-05 — HTML statis dan notebook telah masuk `main`.
 - [x] REPO-07 — Konten LinkedIn digabung melalui PR #2 (`1c0ec90`) dan tampil di produksi.
 - [x] REPO-08 — Foto digabung melalui PR #3, caption diperbaiki, dan versi produksi diverifikasi. Preview dilindungi autentikasi Vercel.
-- [ ] REPO-09 — Mengunggah entrance, memeriksa deployment Vercel, dan memverifikasi entry/skip/replay/keyboard di produksi.
+- [x] REPO-09 — Entrance digabung melalui PR #4 (`fad57cf`); build/check GitHub lolos dan deployment produksi Vercel berhasil.
+- [ ] QA-07 — Memverifikasi entry/skip/replay/keyboard di browser. Domain lama mengembalikan DEPLOYMENT_NOT_FOUND; deployment baru terlindungi login Vercel dan verifikasi menunggu 2FA/passkey.
 
 - [ ] RELEASE-01 — Menyiapkan hasil yang dapat ditinjau pemilik dan menindaklanjuti revisi.
 - [x] RELEASE-02 — Pemilik menyatakan deployment Vercel sudah berhasil; URL/hasil live masih perlu diperiksa pada RELEASE-03.

@@ -51,7 +51,7 @@ Konten karya dan kontak sudah ada di HTML hasil build; tetap dapat digunakan saa
 
 ## Status dan verifikasi
 
-Konten LinkedIn dan foto pemilik sudah tersedia di produksi https://web-porto-mu-eight.vercel.app/. Entrance dikembangkan pada branch `feat/notebook-entrance`; status rilisnya diverifikasi setelah merge. Integrasi API GitHub sebelumnya menolak penulisan, sehingga unggahan dan merge dilakukan melalui browser yang diotorisasi pemilik.
+Konten LinkedIn dan foto pemilik sudah tersedia di produksi https://web-porto-mu-eight.vercel.app/. Entrance telah digabung melalui PR #4 pada commit produksi `fad57cf`; GitHub/Vercel mencatat deployment produksi berhasil. Saat pemeriksaan 16 Oktober 2026, domain lama `web-porto-mu-eight.vercel.app` mengembalikan `DEPLOYMENT_NOT_FOUND`. Deployment terbaru `web-porto-2cl2n26iu-bolfengxis-projects.vercel.app` meminta autentikasi Vercel; verifikasi visual/interaksi masih menunggu penyelesaian 2FA/passkey. Domain publik aktif belum dapat dikonfirmasi. Integrasi API GitHub sebelumnya menolak penulisan, sehingga unggahan dan merge dilakukan melalui browser yang diotorisasi pemilik.
 
 `npm run check` berhasil: pemeriksaan sintaks, 22 tes, build produksi, serta pemeriksaan HTML, anchor, dan aset lokal. Modul entrance sekitar 1.9 kB sebelum gzip; seluruh konten tetap dirender saat build. Tes mencakup entry, skip/Escape, reduced motion, sesi, deep link, replay/fokus, storage ditolak, dan dialog tidak didukung. Tes DOM tidak membuktikan layout, kontras, atau focus trap native. Pemeriksaan pada 360, 768, dan 1440 px serta zoom 200% masih terbuka. Belum ada pengujian langsung pada Windows.
 

@@ -10,7 +10,7 @@ Catatan perubahan berarti pada project. Entri mencatat pekerjaan yang sudah dila
 - Skip intro/Escape langsung masuk. Tampil sekali per sesi tab, deep link melewati sampul, dan Open cover di footer membuka ulang. Fokus kembali ke konten/tombol replay; reduced motion masuk tanpa animasi.
 - Dialog tertutup tanpa JavaScript, browser tanpa dialog tetap dapat memakai konten. Storage ditolak tidak menghalangi masuk. Tidak ada dependency runtime atau layanan eksternal baru.
 - Enam tes interaksi tambahan; `npm run check` lolos 22 tes, build produksi, serta pemeriksaan HTML/anchor/aset. Modul browser sekitar 1.9 kB sebelum gzip.
-- Foto sebelumnya telah digabung melalui PR #3 dan versi produksi diperiksa setelah perbaikan caption. Rilis entrance diverifikasi setelah merge.
+- Foto sebelumnya telah digabung melalui PR #3 dan versi produksi diperiksa setelah perbaikan caption. Entrance digabung melalui PR #4 (`fad57cf`) dan deployment produksi berhasil menurut GitHub/Vercel. Verifikasi visual/interaksi live belum selesai: domain lama mengembalikan DEPLOYMENT_NOT_FOUND dan deployment baru membutuhkan autentikasi Vercel/2FA. Tidak ada perubahan proteksi deployment.
 
 ### Photos — 16 Oktober 2026
 
