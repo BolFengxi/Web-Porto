@@ -67,14 +67,14 @@ Nilai di atas dipakai di `src/styles.css`; bukan klaim hasil sampling tepat dari
 
 Desktop menampilkan hero terpusat, lalu panel proyek dua kolom: deskripsi di kiri dan lembar monogram di kanan. Di bawah 850 px jarak dipadatkan; di bawah 650 px panel proyek menjadi satu kolom. Navigasi dapat membungkus pada lebar sangat kecil. Chip/dekorasi diringkas agar tidak menutupi bio.
 
-Tidak ada intro wajib klik, filter, carousel, atau animasi dekoratif berulang. Tautan anchor bekerja tanpa JavaScript browser. Hover CTA hanya bergerak singkat; reduced motion menonaktifkannya. Focus outline oranye dan skip link disediakan. Area interaksi umumnya minimal 44 px; target navigasi desktop yang lebih ringkas perlu diverifikasi saat QA.
+Entrance yang diminta pemilik berupa sampul notebook dengan judul piksel, label mint, catatan kuning, dan cincin binder CSS. Tombol “Open my notebook” membuka sampul dengan transisi 480 ms; “Skip intro” dan Escape langsung masuk. Dialog native menangani modal/fokus; masuk memindahkan fokus ke konten, replay mengembalikannya ke tombol footer. Tampil sekali per sesi tab, tautan section langsung melewati intro, dan “Open cover” tersedia untuk replay. Tanpa JavaScript/dialog, sampul tetap tertutup. Reduced motion meniadakan transisi. Tidak ada filter, carousel, atau animasi dekoratif berulang. Tautan anchor bekerja tanpa JavaScript browser. Hover CTA hanya bergerak singkat; reduced motion menonaktifkannya. Focus outline oranye dan skip link disediakan. Area interaksi umumnya minimal 44 px; target navigasi desktop yang lebih ringkas perlu diverifikasi saat QA.
 
 Section profil memakai dua kolom pada desktop (catatan ringkasan dan latar belakang), lalu satu kolom di bawah 650 px. Kolase foto berada di kolom kiri; ringkasan serta Education/Experience di kanan. Di mobile, kolase berada di atas teks. Tidak ada garis waktu, metrik, atau logo organisasi rekaan.
 
 ## 7. Verifikasi
 
 - Pemeriksaan sintaks, tes renderer/metadata, dan build produksi dilakukan melalui `npm run check`.
-- Tes memeriksa bio persis, proyek nyata, bagian opsional, tujuan tautan, teks aman, serta HTML yang tidak membutuhkan JavaScript browser.
+- Tes memeriksa bio persis, proyek nyata, bagian opsional, tujuan tautan, teks aman, serta konten HTML yang tidak membutuhkan JavaScript browser. Modul entrance dites terpisah untuk sesi, skip, Escape, replay, fokus, reduced motion, dan fallback.
 - QA visual belum dilakukan: 360/768/1440 px, zoom 200%, font lokal, teks panjang, kontras, dan navigasi keyboard masih harus diperiksa di browser.
 - Foto pribadi telah diberikan; screenshot proyek dan CV belum tersedia. Jangan menggantikannya dengan aset orang lain atau mockup yang seolah hasil aplikasi sebenarnya.
 

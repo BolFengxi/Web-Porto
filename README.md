@@ -1,6 +1,6 @@
 # Web Porto
 
-Portofolio Iqbal dengan arah visual notebook: kertas bergaris, latar grid, nama piksel, dan panel proyek seperti folder. Implementasi awal memakai HTML, CSS, JavaScript modules, dan Vite. Data hardcoded dirender menjadi HTML saat development/build; tidak ada JavaScript aplikasi di browser, backend, database, API eksternal, atau environment variable aplikasi.
+Portofolio Iqbal dengan arah visual notebook: kertas bergaris, latar grid, nama piksel, dan panel proyek seperti folder. Implementasi awal memakai HTML, CSS, JavaScript modules, dan Vite. Data hardcoded dirender menjadi HTML saat development/build; modul browser kecil hanya mengatur entrance notebook. Tidak ada backend, database, API eksternal, atau environment variable aplikasi.
 
 ## Menjalankan di laptop
 
@@ -37,6 +37,7 @@ vite.config.js             Plugin render HTML statis
 scripts/render-page.js     Render konten dan metadata saat build
 scripts/check-build.js     Verifikasi HTML/aset produksi
 src/ui.js                  Render konten dan aturan URL
+src/entrance.js            Entrance opsional, sesi, dan pemulihan fokus
 src/data/portfolio.js       Konten hardcoded
 src/styles.css             Token, komponen, dan responsivitas
 public/favicon.svg         Aset dekoratif asli
@@ -44,15 +45,17 @@ test/                      Tes renderer, metadata, dan HTML statis
 references/                Referensi desain; tidak disajikan sebagai UI
 ```
 
+Entrance berupa dialog sampul notebook: tombol Open my notebook menjalankan transisi singkat, Skip intro dan Escape langsung masuk. Muncul sekali per sesi tab melalui sessionStorage; tautan langsung ke section melewatinya. Tombol Open cover di footer membuka ulang. Reduced motion meniadakan transisi. Dialog tertutup secara default, sehingga tanpa JavaScript atau dukungan dialog, konten tetap langsung tersedia. Penyimpanan sesi yang diblokir tidak menghalangi akses.
+
 Konten karya dan kontak sudah ada di HTML hasil build; tetap dapat digunakan saat JavaScript browser dinonaktifkan. CSS dimuat langsung melalui link stylesheet. Font nama memakai Pixelify Sans lokal berlisensi OFL-1.1; lisensi disertakan di `public/fonts/`. Font lain memakai stack sistem. Tidak ada permintaan font eksternal. Ilustrasi dekoratif dibangun memakai CSS; foto dan isi proyek pada referensi tidak disalin. Monogram pada kartu adalah dekorasi, bukan screenshot aplikasi. `dist/` dan `node_modules/` tidak di-commit.
 
 ## Status dan verifikasi
 
-Konten LinkedIn telah digabung melalui PR #2 ke `main` (`1c0ec90`) dan diverifikasi pada website produksi https://web-porto-mu-eight.vercel.app/. Penambahan foto dikerjakan dari versi tersebut pada branch `feat/notebook-photos`; status rilis foto dicatat setelah verifikasi. Integrasi API GitHub sebelumnya menolak penulisan, sehingga unggahan dan merge dilakukan melalui browser yang diotorisasi pemilik.
+Konten LinkedIn dan foto pemilik sudah tersedia di produksi https://web-porto-mu-eight.vercel.app/. Entrance dikembangkan pada branch `feat/notebook-entrance`; status rilisnya diverifikasi setelah merge. Integrasi API GitHub sebelumnya menolak penulisan, sehingga unggahan dan merge dilakukan melalui browser yang diotorisasi pemilik.
 
-`npm run check` berhasil: pemeriksaan sintaks, 16 tes, build produksi, serta pemeriksaan HTML, anchor, dan aset lokal. Build hanya menghasilkan HTML/CSS/favicon tanpa JavaScript browser. Tes DOM tidak memverifikasi layout, kontras, atau interaksi browser. Pemeriksaan visual di 360, 768, dan 1440 px, keyboard, zoom 200%, serta reduced motion masih perlu dilakukan di browser. Belum ada pengujian langsung pada Windows.
+`npm run check` berhasil: pemeriksaan sintaks, 22 tes, build produksi, serta pemeriksaan HTML, anchor, dan aset lokal. Modul entrance sekitar 1.9 kB sebelum gzip; seluruh konten tetap dirender saat build. Tes mencakup entry, skip/Escape, reduced motion, sesi, deep link, replay/fokus, storage ditolak, dan dialog tidak didukung. Tes DOM tidak membuktikan layout, kontras, atau focus trap native. Pemeriksaan pada 360, 768, dan 1440 px serta zoom 200% masih terbuka. Belum ada pengujian langsung pada Windows.
 
-Deployment memakai koneksi Git Vercel dengan branch produksi `main`. Versi LinkedIn telah diperiksa langsung di produksi; penambahan foto perlu melewati preview sebelum digabung. Folder laptop tidak berubah otomatis ketika source cloud diperbarui.
+Deployment memakai koneksi Git Vercel dengan branch produksi `main`. Preview memakai proteksi Vercel; bila autentikasi preview tidak tersedia, verifikasi interaksi dilakukan pada produksi setelah pemeriksaan otomatis dan rilis yang diotorisasi pemilik. Folder laptop tidak berubah otomatis ketika source cloud diperbarui.
 
 ## Dokumentasi
 

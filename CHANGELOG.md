@@ -4,6 +4,14 @@ Catatan perubahan berarti pada project. Entri mencatat pekerjaan yang sudah dila
 
 ## [Unreleased]
 
+### Entrance — 16 Oktober 2026
+
+- Sampul notebook sebagai entrance: judul piksel, binder CSS, catatan pastel, tombol Open my notebook, dan transisi membuka sampul.
+- Skip intro/Escape langsung masuk. Tampil sekali per sesi tab, deep link melewati sampul, dan Open cover di footer membuka ulang. Fokus kembali ke konten/tombol replay; reduced motion masuk tanpa animasi.
+- Dialog tertutup tanpa JavaScript, browser tanpa dialog tetap dapat memakai konten. Storage ditolak tidak menghalangi masuk. Tidak ada dependency runtime atau layanan eksternal baru.
+- Enam tes interaksi tambahan; `npm run check` lolos 22 tes, build produksi, serta pemeriksaan HTML/anchor/aset. Modul browser sekitar 1.9 kB sebelum gzip.
+- Foto sebelumnya telah digabung melalui PR #3 dan versi produksi diperiksa setelah perbaikan caption. Rilis entrance diverifikasi setelah merge.
+
 ### Photos — 16 Oktober 2026
 
 - Dua foto pemilik ditambahkan ke About: potret kampus dengan latar transparan dan foto futsal asli dalam kolase polaroid dengan selotip pastel.
