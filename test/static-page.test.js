@@ -14,7 +14,9 @@ test('HTML already includes actual project and contact links without executing b
   assert.equal(document.querySelector('#karya').hidden, false);
   assert.equal(document.querySelector('#contact-list a').getAttribute('href'), portfolio.contacts[0].href);
   assert.equal(document.querySelector('#project-template'), null);
-  assert.equal(document.querySelector('script'), null);
+  assert.equal(document.querySelector('#entrance').hasAttribute('open'), false);
+  assert.equal(document.querySelector('[data-entrance-replay]').hidden, true);
+  assert.equal(document.querySelector('script[type="module"]').getAttribute('src'), '/src/entrance.js');
   assert.ok(document.querySelector('link[rel="stylesheet"]'));
 });
 

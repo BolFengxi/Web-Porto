@@ -18,7 +18,7 @@ test('the supplied hero bio stays unchanged while additional background is prese
   assert.equal(document.querySelectorAll('#experience-list .background-entry').length, 2);
   assert.ok(document.querySelector('#experience-list').textContent.includes('Introduction to Computer Organization'));
   assert.ok(document.querySelector('a[href="https://www.linkedin.com/in/iqbal-rafi-nuryana-201836315/"]'));
-  assert.equal(document.querySelector('script'), null);
+  assert.equal(document.querySelector('#profil script'), null);
 });
 
 test('missing dates and organizations are omitted instead of replaced with invented values', () => {
