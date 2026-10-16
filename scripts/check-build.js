@@ -13,7 +13,11 @@ const visible = (element) => !element.hidden && !element.closest('[hidden]');
 assert.equal(document.querySelector('h1').textContent, portfolio.profile.displayName);
 const expectedProjects = portfolio.projects.filter((project) => project.id && project.title?.trim() && project.summary?.trim());
 assert.equal(document.querySelectorAll('.project-card').length, new Set(expectedProjects.map((project) => project.id)).size);
-assert.equal(document.querySelectorAll('script').length, 0, 'Production page must work without browser JavaScript');
+assert.equal(document.querySelectorAll('script').length, 1, 'Only the optional entrance module is needed');
+assert.equal(document.querySelector('script').getAttribute('type'), 'module');
+assert.ok(document.querySelector('script').getAttribute('src').startsWith('/assets/'));
+assert.equal(document.querySelector('#entrance').hasAttribute('open'), false, 'No JavaScript must leave the portfolio unobstructed');
+assert.equal(document.querySelector('[data-entrance-replay]').hidden, true, 'Replay requires enhancement support');
 assert.ok(document.head.querySelector('link[rel="stylesheet"]'), 'Styles must load without JavaScript');
 
 for (const link of document.querySelectorAll('a[href^="#"]')) {
@@ -30,4 +34,4 @@ for (const element of document.querySelectorAll('[src], link[href], a[href]')) {
   assert.ok((await stat(resolved)).isFile(), `Missing production asset: ${href}`);
 }
 await access(new URL('favicon.svg', dist));
-console.log('Static build verified: profile, project cards, anchors and local assets; no browser JavaScript.');
+console.log('Build verified: static content, anchors, local assets and optional entrance module; cover closed without JavaScript.');
