@@ -22,6 +22,7 @@ Membangun website portofolio pribadi Iqbal untuk memperkenalkan profil, menunjuk
 - Data website hardcoded.
 - Tidak ada kebutuhan mengambil data dari API eksternal saat ini.
 - Pemilik meminta desain komik diganti dengan referensi notebook: kertas bergaris, grid, nama piksel, dan aksen catatan tempel; acuan terbaru ada di `DESIGN.md`.
+- Pemilik meminta entrance website (16 Oktober 2026). Implementasi berupa sampul notebook yang dapat dilewati, tampil sekali per sesi, dan mengikuti reduced motion. Konten tetap tersedia tanpa JavaScript; tautan langsung section melewati entrance.
 - Bio publik yang diberikan: Undergraduate Computer Science student at University of Indonesia.
 - Pemilik meminta agent memilih proyek; tiga kandidat dipilih berdasarkan repository public yang dibaca.
 

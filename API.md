@@ -1,10 +1,10 @@
 # API — Batas Integrasi
 
-Status: tidak ada kebutuhan API saat ini · Diperbarui: 15 Oktober 2026
+Status: tidak ada kebutuhan API saat ini · Diperbarui: 16 Oktober 2026
 
 Implementasi awal menggunakan konten lokal dari `src/data/portfolio.js`. Link GitHub hanya navigasi keluar; tidak ada fetch API GitHub atau API data lainnya. Vite hanya menyediakan layanan development/build, bukan backend aplikasi.
 
-Konten kini dirender ke HTML pada development/build; browser memuat HTML, CSS, dan favicon tanpa JavaScript aplikasi. Metadata dibuat dari data lokal yang sama. Ini tetap website statis tanpa API, SSR server produksi, atau database.
+Konten kini dirender ke HTML pada development/build; browser memuat HTML, CSS, aset lokal, dan satu modul entrance opsional. Entrance hanya memakai flag sessionStorage lokal untuk sesi tab; tidak ada API, analytics, atau sinkronisasi data. Metadata dibuat dari data lokal yang sama. Ini tetap website statis tanpa API, SSR server produksi, atau database.
 
 LinkedIn dipakai sebagai sumber editorial pada sesi pengembangan dan sebagai tautan kontak publik. Website tidak melakukan fetch profil LinkedIn, menggunakan API key, atau menyinkronkan data otomatis.
 

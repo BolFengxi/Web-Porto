@@ -1,6 +1,6 @@
 # TASKS — Web Portofolio
 
-Status: redesign notebook, bio pemilik, dan tiga proyek terverifikasi tersedia; 16 tes/build berhasil; QA browser belum dilakukan.
+Status: konten, foto, dan desain notebook tersedia di produksi. Entrance selesai di source; 22 tes/build berhasil. Rilis entrance dan QA browser terarah menyusul.
 
 Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetujuan final.
 
@@ -39,6 +39,7 @@ Legenda: `[x]` selesai, `[ ]` belum selesai. Usulan scope belum berarti persetuj
 - [x] UI-05 — Menulis breakpoint mobile/tablet/desktop dan reduced motion; verifikasi visual masih QA-02/QA-04.
 - [x] META-01 — Membuat title/description/Open Graph dari profil; canonical hanya untuk URL HTTPS yang diberikan pemilik.
 - [x] STATIC-01 — Menyajikan karya, kontak, navigasi, dan stylesheet tanpa JavaScript browser.
+- [x] UI-06 — Menambahkan entrance notebook, skip/Escape, replay, sesi, reduced motion, fokus, serta fallback tanpa JavaScript/dialog.
 - [x] BUILD-01 — Memeriksa anchor dan keberadaan aset lokal hasil build.
 
 UI-01 bergantung pada DESIGN-03, DATA-01, dan setup. UI-02 sampai UI-04 bergantung pada PLAN-01 dan konten masing-masing. Pengumpulan konten serta pemilihan stack dapat berjalan sambil memfinalkan adaptasi visual.
@@ -52,9 +53,9 @@ UI-04 masih menunggu kontak tambahan/CV; tautan GitHub terverifikasi sudah terse
 - [ ] QA-03 — Memeriksa seluruh link, navigasi, menu mobile jika ada, dan CTA.
 - [ ] QA-04 — Memeriksa keyboard, focus, heading, alt text, dan kontras.
 - [ ] QA-05 — Memastikan tidak ada placeholder publik, fakta rekaan, aset hilang, atau secret.
-- [x] QA-06 — `npm run check` berhasil: pemeriksaan sintaks, 16 tes DOM/metadata/URL/latar belakang, build Vite, dan pemeriksaan HTML/aset produksi.
+- [x] QA-06 — `npm run check` berhasil: pemeriksaan sintaks, 22 tes DOM/metadata/URL/latar belakang/entrance, build Vite, dan pemeriksaan HTML/aset produksi.
 
-Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman; tes ini tidak menggantikan QA visual/browser. QA browser dilewati karena kontrol browser yang didukung tidak tersedia pada lingkungan ini.
+Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman; tes ini tidak menggantikan QA visual/browser. Pemeriksaan visual produksi untuk konten/foto telah dilakukan melalui browser. Matriks viewport/zoom lengkap belum dilakukan; tes DOM entrance tidak membuktikan focus trap native.
 
 ## Fase 4 — Rilis
 
@@ -62,7 +63,8 @@ Tes otomatis membuktikan perilaku data kosong, link, ID duplikat, dan teks aman;
 - [x] REPO-04 — PR #1 telah digabung pemilik ke `main`, diverifikasi pada commit `a004d99`.
 - [x] REPO-05 — HTML statis dan notebook telah masuk `main`.
 - [x] REPO-07 — Konten LinkedIn digabung melalui PR #2 (`1c0ec90`) dan tampil di produksi.
-- [ ] REPO-08 — Mengunggah penambahan foto, memeriksa preview, dan memverifikasi produksi setelah merge.
+- [x] REPO-08 — Foto digabung melalui PR #3, caption diperbaiki, dan versi produksi diverifikasi. Preview dilindungi autentikasi Vercel.
+- [ ] REPO-09 — Mengunggah entrance, memeriksa deployment Vercel, dan memverifikasi entry/skip/replay/keyboard di produksi.
 
 - [ ] RELEASE-01 — Menyiapkan hasil yang dapat ditinjau pemilik dan menindaklanjuti revisi.
 - [x] RELEASE-02 — Pemilik menyatakan deployment Vercel sudah berhasil; URL/hasil live masih perlu diperiksa pada RELEASE-03.

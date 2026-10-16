@@ -12,6 +12,17 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <dialog id="entrance" class="entrance" aria-labelledby="entrance-title" aria-describedby="entrance-description">
+      <div class="cover-spine" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="cover-topline"><span>PERSONAL NOTEBOOK</span><span class="cover-volume" aria-hidden="true">VOL. 01</span></div>
+      <p class="cover-hello handwritten">a little corner of the internet</p>
+      <h2 id="entrance-title" class="cover-title"><span data-name>Iqbal</span><span class="cover-subtitle">notes, projects &amp; a bit of me.</span></h2>
+      <div class="cover-stickers" aria-hidden="true"><span class="note note-yellow">still a work in progress</span><span class="cover-flower">✳</span></div>
+      <p id="entrance-description" class="cover-description">Come on in. There's a new page to explore.</p>
+      <button type="button" class="button button-dark cover-open" data-entrance-open autofocus><span class="button-icon" aria-hidden="true">↗</span> Open my notebook</button>
+      <button type="button" class="cover-skip" data-entrance-skip>Skip intro</button>
+      <p class="cover-footnote">SMALL IDEAS. OPEN POSSIBILITIES. <span aria-hidden="true">✦</span></p>
+    </dialog>
     <div class="page-sheet">
       <header class="site-header">
         <a class="wordmark" href="#beranda" aria-label="Iqbal, home"><span aria-hidden="true">i.</span></a>
@@ -77,7 +88,7 @@
         </section>
       </main>
 
-      <footer class="site-footer section-wrapper"><p>© <span data-year>2026</span> <span data-name>Iqbal</span></p><span class="footer-note handwritten">still learning, still making.</span><a href="#beranda">Back to top ↑</a></footer>
+      <footer class="site-footer section-wrapper"><p>© <span data-year>2026</span> <span data-name>Iqbal</span></p><span class="footer-note handwritten">still learning, still making.</span><button type="button" class="cover-replay" data-entrance-replay hidden>Open cover ↗</button><a href="#beranda">Back to top ↑</a></footer>
     </div>
 
     <template id="project-template">
@@ -95,5 +106,6 @@
         </div>
       </article>
     </template>
+    <script type="module" src="/src/entrance.js"></script>
   </body>
 </html>
